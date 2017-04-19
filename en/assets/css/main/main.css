@@ -37,6 +37,8 @@ Envato Profile: http://themeforest.net/user/myboodesign
 29. SOCIAL MEDIA
 30. FOOTER
 31. PARALLAX
+---- additional ---
+33. Custom CSS modify
 
 /*  ----------------------------------------------------
 1. IMPORT GOOGLE FONTS
@@ -2407,7 +2409,7 @@ table th.bg-pasific {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0 !important;
-    color: #999 !important;
+    color: #fff !important;
 }
 .megamenu .dropdown-menu .withoutdesc ul li:hover,
 .megamenu .dropdown-menu .withoutdesc ul li:focus{
@@ -2423,7 +2425,7 @@ table th.bg-pasific {
     font-size: 11px;
     font-weight: 400;
     line-height: 0;
-    margin: 10px 0 15px;
+    margin: 10px 0 150px;
 }
 
 .megamenu .dropdown-submenu{
@@ -2505,7 +2507,7 @@ table th.bg-pasific {
 
 .megamenu .dropdown-menu {
 	left: auto;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     background-color: #222222;
 }
 .megamenu .navbar-right .dropdown-menu {
@@ -2522,7 +2524,7 @@ table th.bg-pasific {
 .megamenu .title {
 	font-size:13px;
 	font-weight:bold;
-	margin-top:15px;
+	margin-top:5px;
 	text-transform:uppercase;
 	border-bottom:1px solid #494949;
 	padding-bottom:10px;
@@ -4490,4 +4492,12 @@ ul.pagination.pagination-pasific li.active a {
     min-height: 600px;
     max-width: 1920px;
     background: transparent;
+}
+/*  ----------------------------------------------------
+32. Custom CSS Modify
+-------------------------------------------------------- */
+.div-menu-divider {
+	border-bottom: 1px solid #494949; 
+	padding-top: 10px; 
+	margin-bottom: 10px;
 }
