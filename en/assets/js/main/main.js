@@ -248,7 +248,7 @@ $(document).ready(function() {
 
         owlShop.owlCarousel({
             slideSpeed : 1000,
-            autoPlay : true,
+            autoPlay : false,
             pagination: false,
             items : 4, 
         });
@@ -258,6 +258,26 @@ $(document).ready(function() {
         })
         $(".shop-control-prev").on('click', function(){
             owlShop.trigger('owl.prev');
+        });
+
+    });
+    
+    $(function() {
+        "use strict";
+        var owlShop2 = $("#owlShop2");
+
+        owlShop2.owlCarousel({
+            slideSpeed : 1000,
+            autoPlay : false,
+            pagination: false,
+            items : 4, 
+        });
+
+        $(".shop-control-next").on('click', function(){
+            owlShop2.trigger('owl.next');
+        })
+        $(".shop-control-prev").on('click', function(){
+            owlShop2.trigger('owl.prev');
         });
 
     });
