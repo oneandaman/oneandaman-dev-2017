@@ -94,15 +94,15 @@
     background-color: transparent;
     border-color: #d4d4d4;
 }
- .jqx-input-button-header-office, .jqx-calendar-title-header-office, .jqx-grid-office .jqx-widget-header-office, .jqx-grid-header-office, .jqx-grid-column-header-office, .jqx-grid-office {font-family: Calibri; border-color: #d4d4d4; color: #444444; background: #fff;}
+.jqx-input-button-header-office, .jqx-calendar-title-header-office, .jqx-grid-office .jqx-widget-header-office, .jqx-grid-header-office, .jqx-grid-column-header-office, .jqx-grid-office {font-family: Calibri; border-color: #d4d4d4; color: #444444; background: #fff;}
 .jqx-window-header-office{font-family: Calibri; color: #444444; background: #fff;}
 .jqx-grid-column-menubutton-office {
     background-image: url('images/office-icon-down.png');
- }
- /*applied to the column's sort button when the sort order is ascending.*/
- .jqx-grid-column-sortascbutton-office {
+}
+/*applied to the column's sort button when the sort order is ascending.*/
+.jqx-grid-column-sortascbutton-office {
     background-image: url('images/office-icon-up.png');
- }
+}
 .jqx-grid-column-sortdescbutton-office {
     background-image: url('images/office-icon-down.png');
 }
@@ -215,12 +215,12 @@
 .jqx-scrollbar-thumb-state-normal-office, .jqx-scrollbar-thumb-state-pressed-office, .jqx-button-office, .jqx-tree-item-hover-office, .jqx-tree-item-selected-office,
 .jqx-tree-item-office, .jqx-menu-item-office, .jqx-menu-item-hover-office, .jqx-menu-item-selected-office, .jqx-menu-item-top-office, .jqx-menu-item-top-hover-office, 
 .jqx-menu-item-top-selected-office, .jqx-slider-button-office, .jqx-slider-slider-office
- {
+{
     -webkit-transition: background-color 100ms linear;
-     -moz-transition: background-color 100ms linear;
-     -o-transition: background-color 100ms linear;
-     -ms-transition: background-color 100ms linear;
-     transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
 }
 .jqx-switchbutton-office {
     -moz-border-radius: 0px; 
