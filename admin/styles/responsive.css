@@ -30,32 +30,24 @@ body
 /* Not required for template or sticky footer method. */
 #wrapper > .container 
 {
-    padding: 60px 15px 0;
+    padding: 0px 15px 0;
 }
 .container .text-muted 
 {
     margin: 20px 0;
+}
+
+#footer 
+{
+    background-color: #3C8DBC;
 }
 #footer > .container 
 {
     padding-left: 15px;
     padding-right: 15px;
 }
-#navBar
-{
-    background: transparent !important;
-    border: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-}
-.navbar
-{
-    min-height: 20px !important;
-}
-code 
-{
-    font-size: 80%;
-}
+/*
+
 
 /* button back to top */
 .scroll-top-wrapper 
@@ -65,19 +57,19 @@ code
     visibility: hidden;
     overflow: hidden;
     text-align: center;
-    z-index: 99999999;
+    z-index: 99;
     background-color: #777777;
     color: #eeeeee;
-    width: 50px;
-    height: 48px;
-    line-height: 48px;
-    right: 30px;
-    bottom: 30px;
-    padding-top: 2px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    width: 37px;
+    height: 35px;
+    line-height: 35px;
+    right: 35px;
+    bottom: 35px;
+    padding-top: 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -99,3 +91,128 @@ code
     line-height: inherit;
 }
 /* End button back to top */
+
+
+
+/*--------------------------------------- Nav Bar--------------------------*/
+.navbar {
+    border-radius: 0;
+}
+
+.head-navbar
+{
+    width: 100%;
+    background-color: #3C8DBC;
+}
+
+.navbar-new {
+    background-color: #3C8DBC;
+    /*border-color: #307096;*/
+}
+
+.navbar-new .navbar-brand,
+.navbar-new .navbar-brand:hover,
+.navbar-new .navbar-brand:focus {
+    color: #FFF;
+}
+
+.navbar-new .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.navbar-new .navbar-nav > li > a:hover,
+.navbar-new .navbar-nav > li > a:focus {
+    background-color: #307096;
+}
+
+.navbar-new .navbar-nav > .active > a,
+.navbar-new .navbar-nav > .active > a:hover,
+.navbar-new .navbar-nav > .active > a:focus {
+    color: #FFF;
+    background-color: #307096;
+}
+
+.navbar-new .navbar-text {
+    color: #FFF;
+}
+
+.navbar-new .navbar-toggle {
+    border-color: #307096;
+}
+
+.navbar-new .navbar-toggle:hover,
+.navbar-new .navbar-toggle:focus {
+    background-color: #307096;
+}
+
+.navbar-new .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
+
+.navbar .navbar-nav > li.open > a,
+.navbar .navbar-nav > li.open > a:hover,
+.navbar .navbar-nav > li.open > a:focus 
+{
+    background-color: #307096;
+}
+
+
+@media all and (min-width: 750px) {
+    .navbar-fixed-width {
+        width: 750px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+}
+
+@media all and (min-width: 970px) {
+    .navbar-fixed-width {
+        width: 970px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+
+}
+
+@media all and (min-width: 1170px) {
+    .navbar-fixed-width {
+        width: 1170px;
+        margin-left: auto;
+        margin-right:auto;
+    }
+}
+
+
+@media (max-width: 767px) 
+{
+    .dropdown-menu > li > a,
+    .dropdown-menu > li > a:focus 
+    {
+        color: #fff;
+        background-color: #3C8DBC;
+        background-image: none;
+    }
+    .dropdown-menu > li > a:hover
+    {
+        color: #fff;
+        background-color: #307096;
+        background-image: none;
+    }
+    /* jqwidget */
+    .jqx-widget
+    {
+        font-size: 1.2em;
+    }
+    .jqx-date-time-input-popup table td input
+    {
+        font-size: 1.7em !important;
+    }
+    input.jqx-input[type="text"], input.jqx-input[type="password"]
+    {
+        font-size: 1em;
+    }
+    .jqx-widget-content
+    {
+        font-size: 1em;
+    }
+}

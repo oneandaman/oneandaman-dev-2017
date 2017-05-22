@@ -804,7 +804,8 @@
 }
 
 input[type="text"].jqx-input-bootstrap, input[type="text"].jqx-widget-content-bootstrap, input[type="textarea"].jqx-widget-content-bootstrap, textarea.jqx-input-bootstrap {
-    padding-left: 0px !important;
+    /*padding-left: 0px !important;*/
+     font-size: 1.2em;
 }
 
 input[type="text"].jqx-input-bootstrap:-moz-placeholder, input[type="text"].jqx-widget-content-bootstrap:-moz-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-moz-placeholder, textarea.jqx-input-bootstrap:-moz-placeholder {
@@ -820,7 +821,8 @@ input[type="text"].jqx-input-bootstrap:-ms-input-placeholder, input[type="text"]
 }
 
 input[type="password"].jqx-input-bootstrap, input[type="password"].jqx-widget-content-bootstrap, input[type="textarea"].jqx-widget-content-bootstrap, textarea.jqx-input-bootstrap {
-    padding-left: 0px !important;
+    /*padding-left: 0px !important;*/
+    font-size: 1em;
 }
 
 input[type="password"].jqx-input-bootstrap:-moz-placeholder, input[type="password"].jqx-widget-content-bootstrap:-moz-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-moz-placeholder, textarea.jqx-input-bootstrap:-moz-placeholder {
