@@ -173,7 +173,7 @@ if ($function_name == 'save_restaurant')
     {
         $connect = $b;
     }
-    include 'connect.php'; 
+    include 'connect.php';
     $query = "INSERT INTO `restaurant` (`restaurant_district_id`, `restaurant_province_id`, `restaurant_status`, `restaurant_geo_x`, `restaurant_geo_y`, `restaurant_info_tel`, `restaurant_info_website`, `restaurant_info_email`, `restaurant_social_facebook`, `restaurant_social_instragram`, `restaurant_social_youtube`, `restaurant_cat`, `restaurant_name`, `restaurant_address`, `restaurant_details_80`, `restaurant_details_200`, `restaurant_details_long`, `restaurant_open_hour`, `restaurant_review_ref_short`, `restaurant_review_ref_long`) VALUES "
             . "('$restaurant_district_id', '$restaurant_province_id', '$restaurant_status', '$restaurant_geo_x', '$restaurant_geo_y', '$restaurant_info_tel', '$restaurant_info_website', '$restaurant_info_email', '$restaurant_social_facebook', '$restaurant_social_instragram', '$restaurant_social_youtube', '$restaurant_cat', '$restaurant_name', '$restaurant_address', '$restaurant_details_80', '$restaurant_details_200', '$restaurant_details_long', '$restaurant_open_hour', '$restaurant_review_ref_short', '$restaurant_review_ref_long');";
 
@@ -321,7 +321,9 @@ if ($function_name == 'get_restaurant')
         $connect = $b;
     }
     include 'connect.php';
-    $query = "SELECT restaurant_id, restaurant_district_id, restaurant_province_id, restaurant_status, restaurant_geo_x, restaurant_geo_y, restaurant_info_tel, restaurant_info_website, restaurant_info_email, restaurant_social_facebook, restaurant_social_instragram, restaurant_social_youtube, restaurant_cat, restaurant_name, restaurant_address, restaurant_details_80, restaurant_details_200, restaurant_details_long, restaurant_open_hour, restaurant_review_ref_short, restaurant_review_ref_long FROM restaurant";
+    $query = "SELECT a.restaurant_id, c.district_name as restaurant_district_id, b.province_name as restaurant_province_id, d.restaurant_type_tag as restaurant_cat, if(a.restaurant_status = 1, 'Enable', 'Disable') as restaurant_status, a.restaurant_geo_x, a.restaurant_geo_y, a.restaurant_info_tel, a.restaurant_info_website, "
+            . "a.restaurant_info_email, a.restaurant_social_facebook,a.restaurant_social_instragram, a.restaurant_social_youtube, a.restaurant_name, a.restaurant_address, a.restaurant_details_80, a.restaurant_details_200, a.restaurant_details_long, a.restaurant_open_hour, a.restaurant_review_ref_short, a.restaurant_review_ref_long FROM "
+            . "restaurant AS a LEFT JOIN province AS b ON a.restaurant_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = c.district_id LEFT JOIN restaurant_type_tag_list AS d ON a.restaurant_cat = d.restaurant_type_tag_list_id";
     include 'json.php';
 }
 
@@ -339,7 +341,9 @@ if ($function_name == 'get_destination')
         $connect = $b;
     }
     include 'connect.php';
-    $query = "SELECT destination_id, destination_district_id, destination_province_id,destination_status, destination_geo_x,destination_geo_y, destination_info_tel,destination_info_fax, destination_info_email,destination_info_website	,destination_social_facebook, destination_social_instragram, destination_social_youtube, destination_cat, destination_name,destination_address, destination_details_80,destination_details_200, destination_details_long,destination_open_hour, destination_fee,destination_visit_season, destination_content_ref_short, destination_content_ref_long FROM destination";
+    $query = "SELECT a.destination_id, c.district_name as destination_district_id, b.province_name as destination_province_id, d.destination_type_tag as destination_cat, if(a.destination_status = 1, 'Enable', 'Disable') as destination_status, a.destination_geo_x,a.destination_geo_y, a.destination_info_tel,a.destination_info_fax, a.destination_info_email, "
+            . "a.destination_info_website, a.destination_social_facebook, a.destination_social_instragram, a.destination_social_youtube, a.destination_name, a.destination_address, a.destination_details_80, a.destination_details_200, a.destination_details_long, a.destination_open_hour, a.destination_fee, a.destination_visit_season, "
+            . "a.destination_content_ref_short, a.destination_content_ref_long FROM destination AS a LEFT JOIN province AS b ON a.destination_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = b.province_id LEFT JOIN destination_type_tag_list AS d ON a.destination_cat = d.destination_type_tag_list_id";
     include 'json.php';
 }
 
@@ -356,7 +360,10 @@ if ($function_name == 'get_accommodation')
         $connect = $b;
     }
     include 'connect.php';
-    $query = "SELECT * FROM accommodation";
+    $query = "SELECT a.accommodation_id, c.district_name as accommodation_district_id, b.province_name as accommodation_province_id, d.accommodation_type_tag as accommodation_cat, if(a.accommodation_status = 1, 'Enable', 'Disable') as accommodation_status, a.accommodation_geo_x, a.accommodation_geo_y, a.accommodation_info_tel, a.accommodation_info_website, "
+            . "a.accommodation_info_email, a.accommodation_social_facebook, a.accommodation_social_instragram, a.accommodation_social_youtube, a.accommodation_book_via_hotels, a.accommodation_book_via_agoda, a.accommodation_book_via_booking, a.accommodation_start_price, a.accommodation_top_price, a.accommodation_name, a.accommodation_address, "
+            . "a.accommodation_details_80, a.accommodation_details_200, a.accommodation_details_long, a.accommodation_review_ref_short, a.accommodation_review_ref_long, a.accommodation_around_dec, a.accommodation_distance_airport, a.accommodation_distance_town FROM accommodation AS a LEFT JOIN province AS b ON a.accommodation_province_id = b.province_id "
+            . "LEFT JOIN district AS c ON b.province_id = c.province_id LEFT JOIN accommodation_type_tag_list AS d ON a.accommodation_cat = d.accommodation_type_tag_list_id";
     include 'json.php';
 }
 
@@ -459,6 +466,42 @@ if ($function_name == 'get_event')
         $connect = $b;
     }
     include 'connect.php';
-    $query = "SELECT * FROM event";
+    $query = "SELECT a.event_id, c.district_name as event_venue_district_id, b.province_name as event_venue_province_id, a.event_name, a.event_detail, a.event_info_link_short, a.event_info_link_long, a.event_venue, a.event_geo_x, a.event_geo_y, a.event_start_date, a.event_end_date FROM `event` AS a LEFT JOIN province AS b ON a.event_venue_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = c.district_id";    
+    include 'json.php';
+}
+
+
+if ($function_name == 'get_province')
+{
+    $lag = $_POST['lag'];
+
+    if ($lag == 'th')
+    {
+        $connect = $a;
+    }
+    else
+    {
+        $connect = $b;
+    }
+    include 'connect.php';
+    $query = "SELECT * FROM province";
+    include 'json.php';
+}
+
+if ($function_name == 'get_district')
+{
+    $lag = $_POST['lag'];
+    $province_id = $_POST['province_id'];
+
+    if ($lag == 'th')
+    {
+        $connect = $a;
+    }
+    else
+    {
+        $connect = $b;
+    }
+    include 'connect.php';
+    $query = "SELECT * FROM district where province_id = '$province_id' ";
     include 'json.php';
 }

@@ -94,7 +94,7 @@ include_once 'script.php';
         $("#grid_dash_destination_th").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -103,12 +103,12 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Destination ID', dataField: 'destination_id', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'Status', dataField: 'destination_status', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'Destination Name', dataField: 'destination_name', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Category', dataField: 'destination_cat', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'District', dataField: 'destination_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'destination_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'destination_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '10%'},
+                        {text: 'สถานะ', dataField: 'destination_status', align: 'center', minwidth: 64, width: '10%'},
+                        {text: 'ชื่อ', dataField: 'destination_name', align: 'center', minwidth: 64, width: '30%'},
+                        {text: 'ประเภท', dataField: 'destination_cat', align: 'center', cellsalign: 'center', minwidth: 64, width: '20%'},
+                        {text: 'อำเภอ', dataField: 'destination_district_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'destination_province_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '15%'}
                     ]
                 });
 
@@ -144,7 +144,7 @@ include_once 'script.php';
         $("#grid_dash_destination_en").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter_en,
@@ -153,12 +153,12 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Destination ID', dataField: 'destination_id', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'Status', dataField: 'destination_status', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'Destination Name', dataField: 'destination_name', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Category', dataField: 'destination_cat', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'District', dataField: 'destination_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'destination_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'destination_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '10%'},
+                        {text: 'สถานะ', dataField: 'destination_status', align: 'center', minwidth: 64, width: '10%'},
+                        {text: 'ชื่อ', dataField: 'destination_name', align: 'center', minwidth: 64, width: '30%'},
+                        {text: 'ประเภท', dataField: 'destination_cat', align: 'center', cellsalign: 'center', minwidth: 64, width: '20%'},
+                        {text: 'อำเภอ', dataField: 'destination_district_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'destination_province_id', align: 'center', cellsalign: 'center', minwidth: 64, width: '15%'}
                     ]
                 });
 
@@ -166,7 +166,7 @@ include_once 'script.php';
 
         $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
         $('#jqxTabs').jqxTabs({height: '100%'});
-        
+
         $("#btn_create").on('click', function ()
         {
             window.open("destination_form.php", "_self");

@@ -40,10 +40,12 @@ Author     : Nattapong  Kothong
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
+            #cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #FFF; z-index:9999;}
         </style>
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+        <div id="cover"></div>
         <div class="wrapper">
 
             <header class="main-header">
