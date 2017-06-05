@@ -104,7 +104,7 @@ code { text-transform:none; font-family: monospace, serif;}
 p {
     font-family: 'Open Sans', sans-serif !important;
     margin: 0 0 25px 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 25px;
     color: #747474;
 }
@@ -1977,15 +1977,15 @@ table th.bg-pasific {
     background-size:cover;
 }
 .carousel .carousel-inner .carousel-img1 {
-    background-image:url(../../../assets/img/bg/img-bg-17.jpg);
+    background-image:url(../../../img/intro/main/ranong_ko-phayam_2048x1365.jpg);
     background-position: center top;
 }
 .carousel .carousel-inner .carousel-img2 {
-    background-image:url(../../../assets/img/bg/img-bg-22.jpg);
+    background-image:url(../../../img/intro/main/krabi_tung-yee-peng_2048x1152.jpg);
     background-position: center center;
 }
 .carousel .carousel-inner .carousel-img3 {
-    background-image:url(../../../assets/img/bg/img-bg-21.jpg);
+    background-image:url(../../../img/intro/main/phuket_promthep-cape_1920X1080.jpg);
     background-position: center bottom;
 }
 .carousel .carousel-inner .carousel-img4 {
@@ -2300,7 +2300,7 @@ table th.bg-pasific {
 }
 
 /* navbar multipage */
-@media(min-width:766px) {
+@media (min-width: 766px) {
     .navbar-mp .dropdown:hover > .dropdown-menu {
         display: block;
     }
@@ -2338,13 +2338,6 @@ table th.bg-pasific {
         display: block;
         overflow: hidden;
         padding-left: 20px;
-    }
-    .navbar-mp .collapse.in{
-  		display:block !important;
-        background-color: #222;
-	}
-    .navbar-mp .collapsing, .in {
-        background-color: #222;
     }
     .navbar-mp .navbar-brand img {
         margin-left: 0 !important;
@@ -2402,7 +2395,7 @@ table th.bg-pasific {
 	text-decoration:none
 }
 .megamenu .dropdown-menu .withoutdesc ul li {
-	padding: 7px 10px 7px 0;    
+	padding: 7px 10px 7px 7px;    
 }
 .megamenu .dropdown-menu .withoutdesc ul li a {
     font-family: 'Open Sans', sans-serif;
@@ -3148,11 +3141,11 @@ canvas {
     font-weight: 200;
 }
 .fact-title {
-    font-size: 11px;
+    font-size: 15px;
     display: block;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 /*  --------------------------------------------------------
