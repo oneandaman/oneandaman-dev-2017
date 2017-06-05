@@ -5,6 +5,12 @@
 // Check incomming IP to re-direct to landing page.
 // If IP come from outside Thailand, go to Enlish page.
 
+// during dev
+header("Location: ".$actual_link.'en/'); 
+die();
+// ----
+
+
 $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
 
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){ // for localhost environment

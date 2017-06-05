@@ -3,7 +3,7 @@ include_once 'header.php';
 ?>
 <h1>
     Destinations
-     <small>Form</small>
+    <small>Form</small>
 </h1>
 <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
@@ -19,323 +19,454 @@ include_once 'topic.php';
 
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">สถานะ</div> 
-        <div class="col-sm-7 text-left"><div id="destination_status_th" ></div></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Status</div> 
-        <div class="col-sm-7 text-left"><div id="destination_status_eng" ></div></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ละติจูด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_geo_x_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Latitude</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_geo_x_eng" /></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ลองติจูด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_geo_y_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Longtitude</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_geo_y_eng" /></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ชื่อสถานที่</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_name_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Name</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_name_eng" /></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ที่อยู่</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_address_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Address</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_address_eng" /></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">จังหวัด</div> 
-        <div class="col-sm-7 text-left"><div id='destination_province_id_th'></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Province</div> 
-        <div class="col-sm-7 text-left"><div id='destination_province_id_eng'></div></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ตำบล</div> 
-        <div class="col-sm-7 text-left"><div id='destination_district_id_th'></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">District</div> 
-        <div class="col-sm-7 text-left"><div id='destination_district_id_eng'></div></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">รายละเอียดสถานที่ (80 ตัวอักษร)</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_80_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Details (80 Charecters)</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_80_eng"></textarea></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">รายละเอียดสถานที่ (200 ตัวอักษร)</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_200_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Details (200 Charecters)</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_200_eng"></textarea></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">คำอธิบาย</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_long_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Detail</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_details_long_eng"></textarea></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เวลา เปิด-ปิด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_open_hour_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Open Hour</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_open_hour_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ค่าเข้าชม (ชาวไทย)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_fee_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Fee (Foreigner)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_fee_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ฤดูกาลสำหรับท่องเที่ยว</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_visit_season_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Season</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_visit_season_eng"></div> 
-    </div>
-</div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เบอร์โทร (ใช้ | เป็นตัวคั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_tel_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Telephone Number</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_tel_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เบอร์แฟกซ์</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_fax_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Fax No</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_fax_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อีเมล (ใช้ | เป็นตัวคั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_email_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Email</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_email_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เว็บไซต์</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_website_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Website</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_info_website_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เพจเฟสบุ๊ค</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_facebook_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Facebook Page</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_facebook_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อินสตาแกรม</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_instragram_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Instragram</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_instragram_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ยูทูป</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_youtube_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Youtube</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_social_youtube_eng"></div> 
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link ที่แสดงหน้าเว็บ (ใช้ | คั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_short_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link ที่แสดงหน้าเว็บ</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_short_eng"></div> 
-    </div>
-</div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link (ใช้ | เป็นตัวคั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_long_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_long_eng"></div> 
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Type Tags</div> 
-        <div class="col-sm-7 text-left"><div id="destination_cat_th"></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Type Tags</div> 
-        <div class="col-sm-7 text-left"><div id="destination_cat_eng"></div></div> 
-    </div>
-</div>
+<!---->
+<div id='jqxTabs'>
+    <ul>
+        <li style="margin-left: 30px;">ภาษาไทย</li>
+        <li>English</li>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อัพโหลดรูปภาพ</div> 
-        <div class="col-sm-7 text-left"><div id="destination_file_saved_name_th"></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Upload Picture</div> 
-        <div class="col-sm-7 text-left"><div id="destination_file_saved_name_eng"></div></div> 
-    </div>
-</div>
+    </ul>
+    <div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">สถานะ</div> 
+                <div class="col-sm-7 text-left"><div id="destination_status_th" ></div></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ชื่อรูปภาพ (ALt)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_pic_alt_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Picture Name (ALt)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="destination_pic_alt_eng"></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">คำอธิบายรูปภาพ</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_pic_detail_th"></textarea></div> 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ละติจูด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_geo_x_th" /></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ลองติจูด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_geo_y_th" /></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ชื่อสถานที่</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_name_th" /></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ที่อยู่</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_address_th" /></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">จังหวัด</div> 
+                <div class="col-sm-7 text-left"><div id='destination_province_id_th'></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อำเภอ</div> 
+                <div class="col-sm-7 text-left"><div id='destination_district_id_th'></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">รายละเอียดสถานที่ (80 ตัวอักษร)</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_80_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">รายละเอียดสถานที่ (200 ตัวอักษร)</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_200_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">คำอธิบาย</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_long_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เวลา เปิด-ปิด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_open_hour_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ค่าเข้าชม (ชาวไทย)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_fee_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ฤดูกาลสำหรับท่องเที่ยว</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_visit_season_th"></div> 
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เบอร์โทร (ใช้ | เป็นตัวคั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_tel_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เบอร์แฟกซ์</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_fax_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อีเมล (ใช้ | เป็นตัวคั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_email_th"></div> 
+            </div>
+            <div class="col-sm-2"> </div> 
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เว็บไซต์</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_website_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เพจเฟสบุ๊ค</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_facebook_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อินสตาแกรม</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_instragram_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ยูทูป</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_youtube_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link ที่แสดงหน้าเว็บไซต์ (ใช้ | คั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_short_th"></div> 
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link (ใช้ | เป็นตัวคั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_long_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Type Tags</div> 
+                <div class="col-sm-7 text-left"><div id="destination_cat_th"></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อัพโหลดรูปภาพ</div> 
+                <div class="col-sm-7 text-left"><div id="destination_file_saved_name_th"></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ชื่อรูปภาพ (ALt)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_pic_alt_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">คำอธิบายรูปภาพ</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_pic_detail_th"></textarea></div> 
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left"></div> 
+                <div class="col-sm-7 text-left"><button id="btn_save_th">บันทึก</button></div> 
+            </div>
+
+        </div>
     </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Picture Detail</div> 
-        <div class="col-sm-7 text-left"><textarea id="destination_pic_detail_eng"></textarea></div> 
+    <div>
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Status</div> 
+                <div class="col-sm-7 text-left"><div id="destination_status_eng" ></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Latitude</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_geo_x_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Longtitude</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_geo_y_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Name</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_name_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Address</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_address_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Province</div> 
+                <div class="col-sm-7 text-left"><div id='destination_province_id_eng'></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">District</div> 
+                <div class="col-sm-7 text-left"><div id='destination_district_id_eng'></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Details (80 Charecters)</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_80_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Details (200 Charecters)</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_200_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Detail</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_details_long_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Open Hour</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_open_hour_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Fee (Foreigner)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_fee_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Season</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_visit_season_eng"></div> 
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Telephone Number</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_tel_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Fax No</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_fax_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Email</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_email_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Website</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_info_website_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Facebook Page</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_facebook_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Instragram</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_instragram_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Youtube</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_social_youtube_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link ที่แสดงหน้าเว็บ</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_short_eng"></div> 
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_content_ref_long_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Type Tags</div> 
+                <div class="col-sm-7 text-left"><div id="destination_cat_eng"></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Upload Picture</div> 
+                <div class="col-sm-7 text-left"><div id="destination_file_saved_name_eng"></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Picture Name (ALt)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="destination_pic_alt_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Picture Detail</div> 
+                <div class="col-sm-7 text-left"><textarea id="destination_pic_detail_eng"></textarea></div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left"></div> 
+                <div class="col-sm-7 text-left"><button id="btn_save_en">Save</button></div> 
+            </div>
+
+        </div>
     </div>
-</div>
+
+</div>   
+
+<!---->
 
 <?php
 include_once 'script.php';
 ?>
+
 <script type="text/javascript">
     $(document).ready(function ()
     {
@@ -372,7 +503,7 @@ include_once 'script.php';
 
         var destination_province_id_th_source = [
             "-",
-            "พงงา",
+            "พังงา",
             "ภูเก็ต"
         ];
         $("#destination_province_id_th").jqxDropDownList({source: destination_province_id_th_source, selectedIndex: 0, itemHeight: 30, width: '100%', height: '30', autoDropDownHeight: true, theme: theme});
@@ -493,10 +624,112 @@ include_once 'script.php';
         $('#destination_pic_detail_th').jqxTextArea({placeHolder: 'คำอธิบายรูปภาพ', height: 150, width: '100%', minLength: 1});
         $('#destination_pic_detail_eng').jqxTextArea({placeHolder: 'Picture Detail', height: 150, width: '100%', minLength: 1});
 
-
+        $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
+        $('#jqxTabs').jqxTabs({height: '100%'});
         // จบใส่ javascript
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $('#btn_save_th').jqxButton({width: '100', height: '30', theme: theme});
+        $('#btn_save_en').jqxButton({width: '100', height: '30', theme: theme});
+
+        $("#btn_save_th").on('click', function ()
+        {
+            save_to_db('th');
+        });
+
+        $("#btn_save_en").on('click', function ()
+        {
+            save_to_db('en');
+        });
     });
+
+
+    function save_to_db(lang)
+    {
+        if (lang === 'th')
+        {
+            var url = "database/query.php";
+            $.ajax(
+                    {
+                        url: url,
+                        method: "POST",
+                        async: false,
+                        data:
+                                {
+                                    fc: 'save_destination',
+                                    lag: 'th',
+                                    destination_district_id: $('#destination_district_id_th').val(),
+                                    destination_province_id: $('#destination_province_id_th').val(),
+                                    destination_status: $('#destination_status_th').val(),
+                                    destination_geo_x: $('#destination_geo_x_th').val(),
+                                    destination_geo_y: $('#destination_geo_y_th').val(),
+                                    destination_info_tel: $('#destination_info_tel_th').val(),
+                                    destination_info_fax: $('#destination_info_fax_th').val(),
+                                    destination_info_email: $('#destination_info_email_th').val(),
+                                    destination_info_website: $('#destination_info_website_th').val(),
+                                    destination_social_facebook: $('#destination_social_facebook_th').val(),
+                                    destination_social_instragram: $('#destination_social_instragram_th').val(),
+                                    destination_social_youtube: $('#destination_social_youtube_th').val(),
+                                    destination_cat: $('#destination_cat_th').val(),
+                                    destination_name: $('#destination_name_th').val(),
+                                    destination_address: $('#destination_address_th').val(),
+                                    destination_details_80: $('#destination_details_80_th').val(),
+                                    destination_details_200: $('#destination_details_200_th').val(),
+                                    destination_details_long: $('#destination_details_long_th').val(),
+                                    destination_open_hour: $('#destination_open_hour_th').val(),
+                                    destination_fee: $('#destination_fee_th').val(),
+                                    destination_visit_season: $('#destination_visit_season_th').val(),
+                                    destination_content_ref_short: $('#destination_content_ref_short_th').val(),
+                                    destination_content_ref_long: $('#destination_content_ref_long_th').val()
+                                }
+                    })
+                    .done(function (msg)
+                    {
+                        //alert(msg);
+                    });
+        } else if (lang === 'en')
+        {
+            var url = "database/query.php";
+            $.ajax(
+                    {
+                        url: url,
+                        method: "POST",
+                        async: false,
+                        data:
+                                {
+                                    fc: 'save_destination',
+                                    lag: 'en',
+                                    destination_district_id: $('#destination_district_id_en').val(),
+                                    destination_province_id: $('#destination_province_id_en').val(),
+                                    destination_status: $('#destination_status_en').val(),
+                                    destination_geo_x: $('#destination_geo_x_en').val(),
+                                    destination_geo_y: $('#destination_geo_y_en').val(),
+                                    destination_info_tel: $('#destination_info_tel_en').val(),
+                                    destination_info_fax: $('#destination_info_fax_en').val(),
+                                    destination_info_email: $('#destination_info_email_en').val(),
+                                    destination_info_website: $('#destination_info_website_en').val(),
+                                    destination_social_facebook: $('#destination_social_facebook_en').val(),
+                                    destination_social_instragram: $('#destination_social_instragram_en').val(),
+                                    destination_social_youtube: $('#destination_social_youtube_en').val(),
+                                    destination_cat: $('#destination_cat_en').val(),
+                                    destination_name: $('#destination_name_en').val(),
+                                    destination_address: $('#destination_address_en').val(),
+                                    destination_details_80: $('#destination_details_80_en').val(),
+                                    destination_details_200: $('#destination_details_200_en').val(),
+                                    destination_details_long: $('#destination_details_long_en').val(),
+                                    destination_open_hour: $('#destination_open_hour_en').val(),
+                                    destination_fee: $('#destination_fee_en').val(),
+                                    destination_visit_season: $('#destination_visit_season_en').val(),
+                                    destination_content_ref_short: $('#destination_content_ref_short_en').val(),
+                                    destination_content_ref_long: $('#destination_content_ref_long_en').val()
+                                }
+                    })
+                    .done(function (msg)
+                    {
+                        //alert(msg);
+                    });
+        }
+       window.open("destination.php", "_self"); 
+    }
 </script>
 <?php
 include_once 'footer.php';

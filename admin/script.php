@@ -6,7 +6,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.0.0
                 </div>
-                <strong>Copyright &copy; 2017 <a href="#">One Andaman</a>.</strong> All rights reserved.
+                <strong>Copyright &copy; 2017 <a href="http://www.oneandaman.com/" target="_blank" >OneAndaman</a>.</strong> All rights reserved.
             </footer>
         </div>
 
@@ -37,3 +37,5 @@
         <script src="jqwidgets/jqxgrid.selection.js" type="text/javascript"></script>
         <script src="jqwidgets/jqxdatetimeinput.js" type="text/javascript"></script>
         <script src="jqwidgets/jqxcalendar.js" type="text/javascript"></script>
+        <script src="jqwidgets/jqxtabs.js" type="text/javascript"></script>
+        <script src="jqwidgets/jqxbuttons.js" type="text/javascript"></script>

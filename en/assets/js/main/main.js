@@ -293,6 +293,32 @@ $(document).ready(function() {
             $("#pageloader").delay(800).fadeOut("slow");
         });
 	});
+	
+	/* --------------------------------------------------------
+	 LANGAGE SWITCH
+	----------------------------------------------------------- */
+    $(function() {
+		"use strict";		
+        $("#lag-th").click(function(){
+			var url = window.location.href;
+			if(url.search("/en/")>0){
+				var new_url = url.replace("/en/", "/th/");
+				window.location = new_url;
+			}
+        });
+	});
+	
+	$(function() {
+		"use strict";		
+        $("#lag-en").click(function(){
+			var url = window.location.href;
+			if(url.search("/th/")>0){
+				var new_url = url.replace("/th/", "/en/");
+				window.location = new_url;
+			}
+        });
+	});
+	
     
     /* --------------------------------------------------------
 	 JQUERY TYPED
@@ -427,7 +453,7 @@ $(window).load(function() {
             itemSelector: '.portfolio-masonry-one-item',
             masonry: {
               columnWidth: 180,
-              gutter: 10
+              gutter: 5
             }
         }); 
         
@@ -435,7 +461,7 @@ $(window).load(function() {
             itemSelector: '.portfolio-masonry-one-item',
             masonry: {
               columnWidth: 180,
-              gutter: 10
+              gutter: 5
             }
         });
         
@@ -505,8 +531,8 @@ $(window).load(function() {
         
 
         $('ul.filters li a').on('click', function(){
-            $('ul.filters li a').removeClass('active');
-            $(this).addClass('active');
+            $('ul.filters li a').removeClass('portfolio-menu-active');
+            $(this).addClass('portfolio-menu-active');
         });
 
     });
