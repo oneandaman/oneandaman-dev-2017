@@ -1,14 +1,13 @@
 <?php
 include_once 'header.php';
 ?>
-<h1>
-    Destination Activity Tag
-    <small>Form</small>
-</h1>
+<h3>
+    Create Form
+</h3>
 <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="tag_destination_activity.php">Destination Activity Tag</a></li>
-    <li class="active">Destination Activity Tag Form</li>
+    <li class="active">Create Form</li>
 </ol>
 <?php
 include_once 'topic.php';
@@ -22,30 +21,34 @@ include_once 'topic.php';
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">ประเภทกิจกรรม</div>
-                <div class="col-sm-7 text-left"><input type="text" id="destination_activity_tag_th" /></div>
+                <div class="col-sm-6 text-left"><input type="text" id="destination_activity_tag_th" /></div>
+                <div class="col-sm-3 text-left">*</div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
     </div>
     
     
-    <div>
+    <div><!-- English Tab -->
         <div class="row">
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">Destination Activity Type</div>
-                <div class="col-sm-7 text-left"><input type="text" id="destination_activity_tag_eng" /></div>
+                <div class="col-sm-3 text-left">ประเภทกิจกรรม</div>
+                <div class="col-sm-6 text-left"><input type="text" id="destination_activity_tag_eng" /></div>
+                <div class="col-sm-3 text-left">*</div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
@@ -62,8 +65,8 @@ include_once 'script.php';
         // ใส่ javascript ตรงนี้
         var theme = 'energyblue';
    
-        $("#destination_activity_tag_th").jqxInput({placeHolder: "ประเภทกิจกรรม", height: 25, width: '98%', minLength: 1});
-        $("#destination_activity_tag_eng").jqxInput({placeHolder: "Destination Activity Type", height: 25, width: '98%', minLength: 1});
+        $("#destination_activity_tag_th").jqxInput({height: 25, width: '98%', minLength: 1});
+        $("#destination_activity_tag_eng").jqxInput({height: 25, width: '98%', minLength: 1});
         
         $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
         $('#jqxTabs').jqxTabs({height: '100%'});

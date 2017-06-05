@@ -86,7 +86,7 @@ include_once 'script.php';
         $("#grid_dash_th").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -97,9 +97,9 @@ include_once 'script.php';
                     columns: [
                         {text: 'ชื่อกิจกรรม', dataField: 'event_name', align: 'center', minwidth: 64, width: '40%'},
                         {text: 'สถานที่จัดกิจกรรม', dataField: 'event_venue', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'จังหวัด', dataField: 'event_venue_province_id', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'วันที่เริ่มกิจกรรม', dataField: 'event_start_date', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'วันที่สิ้นสุดกิจกรรม', dataField: 'event_end_date', align: 'center', minwidth: 74.5, width: '15%'}
+                        {text: 'จังหวัด', dataField: 'event_venue_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '10%'},
+                        {text: 'วันที่เริ่มกิจกรรม', dataField: 'event_start_date', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'วันที่สิ้นสุดกิจกรรม', dataField: 'event_end_date', align: 'center', cellsalign: 'center' , minwidth: 74.5, width: '15%'}
                     ]
                 });
 
@@ -132,7 +132,7 @@ include_once 'script.php';
         $("#grid_dash_en").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -141,11 +141,11 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Event Name', dataField: 'event_name', align: 'center', minwidth: 64, width: '40%'},
-                        {text: 'Venue', dataField: 'event_venue', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'Province', dataField: 'event_venue_province_id', align: 'center', minwidth: 64, width: '10%'},
-                        {text: 'Start Date', dataField: 'event_start_date', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'End Date', dataField: 'event_end_date', align: 'center', minwidth: 74.5, width: '15%'}
+                        {text: 'ชื่อกิจกรรม', dataField: 'event_name', align: 'center', minwidth: 64, width: '40%'},
+                        {text: 'สถานที่จัดกิจกรรม', dataField: 'event_venue', align: 'center', minwidth: 64, width: '20%'},
+                        {text: 'จังหวัด', dataField: 'event_venue_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '10%'},
+                        {text: 'วันที่เริ่มกิจกรรม', dataField: 'event_start_date', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'วันที่สิ้นสุดกิจกรรม', dataField: 'event_end_date', align: 'center', cellsalign: 'center' , minwidth: 74.5, width: '15%'}
                     ]
                 });
 

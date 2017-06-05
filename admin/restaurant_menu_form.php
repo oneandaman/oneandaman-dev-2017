@@ -23,7 +23,8 @@ include_once 'topic.php';
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">ชื่อเมนูแนะนำ</div> 
-                <div class="col-sm-7 text-left"><input type="text" id="restaurant_manu_name_th" /></div> 
+                <div class="col-sm-6 text-left"><input type="text" id="restaurant_manu_name_th" /></div> 
+                <div class="col-sm-3 text-left">*</div>
             </div>
 
         </div>
@@ -31,15 +32,17 @@ include_once 'topic.php';
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">อัพโหลดรูปภาพ</div> 
-                <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_th"></div></div> 
+                <div class="col-sm-6 text-left"><div id="restaurant_file_saved_name_th"></div></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
 
         <div class="row">
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">ชื่อรูปภาพ (ALt)</div> 
-                <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_th"></div> 
+                <div class="col-sm-3 text-left">ชื่อรูปภาพ</div> 
+                <div class="col-sm-6 text-left"><input type="text" id="restaurant_pic_alt_th"></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
@@ -47,56 +50,63 @@ include_once 'topic.php';
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">คำอธิบายรูปภาพ</div> 
-                <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_th"></textarea></div> 
+                <div class="col-sm-6 text-left"><textarea id="restaurant_pic_detail_th"></textarea></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
 
     </div>
 
-    <div>
+    <div><!-- Englisg Tab -->
         <div class="row">
 
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">Menu Name</div> 
-                <div class="col-sm-7 text-left"><input type="text" id="restaurant_manu_name_eng" /></div> 
+                <div class="col-sm-3 text-left">ชื่อเมนูแนะนำ</div> 
+                <div class="col-sm-6 text-left"><input type="text" id="restaurant_manu_name_eng" /></div> 
+                <div class="col-sm-3 text-left">*</div>
             </div>
         </div>
 
         <div class="row">
 
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">Upload Picture</div> 
-                <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_eng"></div></div> 
+                <div class="col-sm-3 text-left">อัพโหลดรูปภาพ</div> 
+                <div class="col-sm-6 text-left"><div id="restaurant_file_saved_name_eng"></div></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
         </div>
 
         <div class="row">
 
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">Picture Name (ALt)</div> 
-                <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_eng"></div> 
+                <div class="col-sm-3 text-left">ชื่อรูปภาพ</div> 
+                <div class="col-sm-6 text-left"><input type="text" id="restaurant_pic_alt_eng"></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
         </div>
 
         <div class="row">
 
             <div class="col-sm-12">
-                <div class="col-sm-3 text-left">Picture Detail</div> 
-                <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_eng"></textarea></div> 
+                <div class="col-sm-3 text-left">คำอธิบายรูปภาพ</div> 
+                <div class="col-sm-6 text-left"><textarea id="restaurant_pic_detail_eng"></textarea></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
@@ -115,18 +125,18 @@ include_once 'script.php';
         var theme = 'energyblue';
 
 
-        $("#restaurant_manu_name_th").jqxInput({placeHolder: "ชื่อเมนูแนะนำ", height: 25, width: '98%', minLength: 1, theme: theme});
-        $("#restaurant_manu_name_eng").jqxInput({placeHolder: "Menu Name", height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_manu_name_th").jqxInput({height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_manu_name_eng").jqxInput({height: 25, width: '98%', minLength: 1, theme: theme});
 
         // Table : restaurant_menu_pic
         $('#restaurant_file_saved_name_th').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme: theme});
         $('#restaurant_file_saved_name_eng').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme: theme});
 
-        $("#restaurant_pic_alt_th").jqxInput({placeHolder: "ชื่อรูปภาพ สำหรับใส่ใน Tag(ALt)", height: 25, width: '98%', minLength: 1, theme: theme});
-        $("#restaurant_pic_alt_eng").jqxInput({placeHolder: "Picture Name (ALt)", height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_pic_alt_th").jqxInput({height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_pic_alt_eng").jqxInput({height: 25, width: '98%', minLength: 1, theme: theme});
 
-        $('#restaurant_pic_detail_th').jqxTextArea({placeHolder: 'คำอธิบายรูปภาพ', height: 150, width: '100%', minLength: 1, theme: theme});
-        $('#restaurant_pic_detail_eng').jqxTextArea({placeHolder: 'Picture Detail', height: 150, width: '100%', minLength: 1, theme: theme});
+        $('#restaurant_pic_detail_th').jqxTextArea({height: 150, width: '100%', minLength: 1, theme: theme});
+        $('#restaurant_pic_detail_eng').jqxTextArea({height: 150, width: '100%', minLength: 1, theme: theme});
 
         $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
         $('#jqxTabs').jqxTabs({height: '100%'});

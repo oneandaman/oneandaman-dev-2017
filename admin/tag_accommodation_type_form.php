@@ -1,14 +1,13 @@
 <?php
 include_once 'header.php';
 ?>
-<h1>
-    Accommodation Type Tag
-    <small>Form</small>
-</h1>
+<h3>
+    Create Form
+</h3>
 <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="tag_accommodation_type.php">Accommodation Type Tag</a></li>
-    <li class="active">Accommodation Room Type Form</li>
+    <li class="active">Create Form</li>
 </ol>
 <?php
 include_once 'topic.php';
@@ -22,30 +21,34 @@ include_once 'topic.php';
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">ประเภทที่พัก</div>
-                <div class="col-sm-7 text-left"><input type="text" id="accommodation_type_tag_th" /></div>
+                <div class="col-sm-6 text-left"><input type="text" id="accommodation_type_tag_th" /></div>
+                <div class="col-sm-3 text-left">*</div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_th">บันทึก</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
     </div>
     
     
-    <div>
+    <div><!-- English Tab -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left">Accommodation Type</div>
-                <div class="col-sm-7 text-left"><input type="text" id="accommodation_type_tag_eng" /></div>
+                <div class="col-sm-6 text-left"><input type="text" id="accommodation_type_tag_eng" /></div>
+                <div class="col-sm-3 text-left">*</div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3 text-left"></div> 
-                <div class="col-sm-7 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-6 text-left"><button id="btn_save_en">Save</button></div> 
+                <div class="col-sm-3 text-left"></div>
             </div>
 
         </div>
@@ -62,8 +65,8 @@ include_once 'script.php';
         // ใส่ javascript ตรงนี้
         var theme = 'energyblue';
    
-        $("#accommodation_type_tag_th").jqxInput({placeHolder: "ประเภทห้องพัก", height: 25, width: '98%', minLength: 1});
-        $("#accommodation_type_tag_eng").jqxInput({placeHolder: "Accommodation Type", height: 25, width: '98%', minLength: 1});
+        $("#accommodation_type_tag_th").jqxInput({height: 25, width: '98%', minLength: 1});
+        $("#accommodation_type_tag_eng").jqxInput({height: 25, width: '98%', minLength: 1});
         
         $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
         $('#jqxTabs').jqxTabs({height: '100%'});
