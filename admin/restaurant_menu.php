@@ -79,20 +79,23 @@ include_once 'script.php';
         var theme = 'energyblue';
 
 
-        $("#restaurant_manu_name_th").jqxInput({placeHolder: "ชื่อเมนูแนะนำ", height: 25, width: '98%', minLength: 1, theme:theme});
-        $("#restaurant_manu_name_eng").jqxInput({placeHolder: "Menu Name", height: 25, width: '98%', minLength: 1, theme:theme});
+        $("#restaurant_manu_name_th").jqxInput({placeHolder: "ชื่อเมนูแนะนำ", height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_manu_name_eng").jqxInput({placeHolder: "Menu Name", height: 25, width: '98%', minLength: 1, theme: theme});
 
         // Table : restaurant_menu_pic
-        $('#restaurant_file_saved_name_th').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme:theme});
-        $('#restaurant_file_saved_name_eng').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme:theme});
+        $('#restaurant_file_saved_name_th').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme: theme});
+        $('#restaurant_file_saved_name_eng').jqxFileUpload({width: '100%', uploadUrl: '#.php', fileInputName: 'fileToUpload', theme: theme});
 
-        $("#restaurant_pic_alt_th").jqxInput({placeHolder: "ชื่อรูปภาพ สำหรับใส่ใน Tag(ALt)", height: 25, width: '98%', minLength: 1, theme:theme});
-        $("#restaurant_pic_alt_eng").jqxInput({placeHolder: "Picture Name (ALt)", height: 25, width: '98%', minLength: 1, theme:theme});
+        $("#restaurant_pic_alt_th").jqxInput({placeHolder: "ชื่อรูปภาพ สำหรับใส่ใน Tag(ALt)", height: 25, width: '98%', minLength: 1, theme: theme});
+        $("#restaurant_pic_alt_eng").jqxInput({placeHolder: "Picture Name (ALt)", height: 25, width: '98%', minLength: 1, theme: theme});
 
-        $('#restaurant_pic_detail_th').jqxTextArea({placeHolder: 'คำอธิบายรูปภาพ', height: 150, width: '100%', minLength: 1, theme:theme});
-        $('#restaurant_pic_detail_eng').jqxTextArea({placeHolder: 'Picture Detail', height: 150, width: '100%', minLength: 1, theme:theme});
+        $('#restaurant_pic_detail_th').jqxTextArea({placeHolder: 'คำอธิบายรูปภาพ', height: 150, width: '100%', minLength: 1, theme: theme});
+        $('#restaurant_pic_detail_eng').jqxTextArea({placeHolder: 'Picture Detail', height: 150, width: '100%', minLength: 1, theme: theme});
 
-
+        $("#btn_create").on('click', function ()
+        {
+            window.open("restaurant_menu_form.php", "_self");
+        });
         // จบใส่ javascript
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     });

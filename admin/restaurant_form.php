@@ -13,290 +13,408 @@ include_once 'header.php';
 <?php
 include_once 'topic.php';
 ?>
-<div class="row">
-    <div class="col-sm-12"></div>
-</div>
+<div id='jqxTabs'>
+    <ul>
+        <li style="margin-left: 30px;">ภาษาไทย</li>
+        <li>English</li>
+
+    </ul>
+    <div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">สถานะ</div> 
-        <div class="col-sm-7 text-left"><div id="restaurant_status_th" ></div></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Status</div> 
-        <div class="col-sm-7 text-left"><div id="restaurant_status_eng" ></div></div> 
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ละติจูด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_x_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Latitude</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_x_eng" /></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">สถานะ</div> 
+                <div class="col-sm-7 text-left"><div id="restaurant_status_th" ></div></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ลองติจูด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_y_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div>
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Longtitude</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_y_eng" /></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ประเภทร้านอาหาร </div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_cat_th'></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Restaurant Route</div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_cat_eng'></div></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ละติจูด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_x_th" /></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ชื่อสถานที่</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_name_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Name</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_name_eng" /></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ที่อยู่</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_address_th" /></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Address</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_address_eng" /></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ลองติจูด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_y_th" /></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">จังหวัด</div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_province_id_th'></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Province</div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_province_id_eng'></div></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ตำบล</div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_district_id_th'></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">District</div> 
-        <div class="col-sm-7 text-left"><div id='restaurant_district_id_eng'></div></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ประเภทร้านอาหาร </div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_cat_th'></div></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">รายละเอียดสถานที่ (80 ตัวอักษร)</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_80_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Details (80 Charecters)</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_80_eng"></textarea></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">รายละเอียดสถานที่ (200 ตัวอักษร)</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_200_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Destination Details (200 Charecters)</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_200_eng"></textarea></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ชื่อสถานที่</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_name_th" /></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">คำอธิบาย</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_long_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Detail</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_details_long_eng"></textarea></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เวลา เปิด-ปิด</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_open_hour_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Open Hour</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_open_hour_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ที่อยู่</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_address_th" /></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เบอร์โทร (ใช้ | เป็นตัวคั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_tel_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Telephone Number</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_tel_eng"></div> 
-    </div>
-</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">จังหวัด</div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_province_id_th'></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อำเภอ</div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_district_id_th'></div></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">รายละเอียดสถานที่ (80 ตัวอักษร)</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_80_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">รายละเอียดสถานที่ (200 ตัวอักษร)</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_200_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">คำอธิบาย</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_long_th"></textarea></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เวลา เปิด-ปิด</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_open_hour_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เบอร์โทร (ใช้ | เป็นตัวคั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_tel_th"></div> 
+            </div>
+
+        </div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เว็บไซต์</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_website_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Website</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_website_eng"></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เว็บไซต์</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_website_th"></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อีเมล</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_email_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Email</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_email_eng"></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">เพจเฟสบุ๊ค</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_facebook_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Facebook Page</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_facebook_eng"></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อีเมล</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_email_th"></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อินสตาแกรม</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_instragram_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Instragram</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_instragram_eng"></div> 
-    </div>
-</div>
+        </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ยูทูป</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_youtube_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Youtube</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_youtube_eng"></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">เพจเฟสบุ๊ค</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_facebook_th"></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link ที่แสดงหน้าเว็บ (ใช้ | คั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_short_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link ที่แสดงหน้าเว็บ</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_short_eng"></div> 
-    </div>
-</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อินสตาแกรม</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_instragram_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ยูทูป</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_youtube_th"></div> 
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link ที่แสดงหน้าเว็บ (ใช้ | คั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_short_th"></div> 
+            </div>
+
+        </div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link (ใช้ | เป็นตัวคั่น)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_long_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Link</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_long_eng"></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link (ใช้ | เป็นตัวคั่น)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_long_th"></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">อัพโหลดรูปภาพ</div> 
-        <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_th"></div></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Upload Picture</div> 
-        <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_eng"></div></div> 
-    </div>
-</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">อัพโหลดรูปภาพ</div> 
+                <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_th"></div></div> 
+            </div>
+
+        </div>
 
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">ชื่อรูปภาพ (ALt)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_th"></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Picture Name (ALt)</div> 
-        <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_eng"></div> 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">ชื่อรูปภาพ (ALt)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_th"></div> 
+            </div>
 
-<div class="row">
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">คำอธิบายรูปภาพ</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_th"></textarea></div> 
-    </div>
-    <div class="col-sm-2"> </div> 
-    <div class="col-sm-5">
-        <div class="col-sm-5 text-right">Picture Detail</div> 
-        <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_eng"></textarea></div> 
-    </div>
-</div>
+        </div>
 
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">คำอธิบายรูปภาพ</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_th"></textarea></div> 
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left"></div> 
+                <div class="col-sm-7 text-left"><button id="btn_save_th">บันทึก</button></div> 
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Status</div> 
+                <div class="col-sm-7 text-left"><div id="restaurant_status_eng" ></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Latitude</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_x_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Longtitude</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_geo_y_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Restaurant Route</div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_cat_eng'></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Name</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_name_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Address</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_address_eng" /></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Province</div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_province_id_eng'></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">District</div> 
+                <div class="col-sm-7 text-left"><div id='restaurant_district_id_eng'></div></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Details (80 Charecters)</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_80_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Destination Details (200 Charecters)</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_200_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Detail</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_details_long_eng"></textarea></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Open Hour</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_open_hour_eng"><!-- <div id='destination_open_hour_eng'></div> --></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Telephone Number</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_tel_eng"></div> 
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Website</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_website_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Email</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_info_email_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Facebook Page</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_facebook_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Instragram</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_instragram_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Youtube</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_social_youtube_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link ที่แสดงหน้าเว็บ</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_short_eng"></div> 
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Link</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_review_ref_long_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Upload Picture</div> 
+                <div class="col-sm-7 text-left"><div id="restaurant_file_saved_name_eng"></div></div> 
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Picture Name (ALt)</div> 
+                <div class="col-sm-7 text-left"><input type="text" id="restaurant_pic_alt_eng"></div> 
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left">Picture Detail</div> 
+                <div class="col-sm-7 text-left"><textarea id="restaurant_pic_detail_eng"></textarea></div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-3 text-left"></div> 
+                <div class="col-sm-7 text-left"><button id="btn_save_en">Save</button></div> 
+            </div>
+
+        </div>
+    </div>
+
+</div>  
 <?php
 include_once 'script.php';
 ?>
@@ -433,10 +551,108 @@ include_once 'script.php';
         $('#restaurant_pic_detail_th').jqxTextArea({placeHolder: 'คำอธิบายรูปภาพ', height: 150, width: '100%', minLength: 1});
         $('#restaurant_pic_detail_eng').jqxTextArea({placeHolder: 'Picture Detail', height: 150, width: '100%', minLength: 1});
 
-
+        $('#jqxTabs').jqxTabs({width: '100%', height: '100%', position: 'top', theme: theme});
+        $('#jqxTabs').jqxTabs({height: '100%'});
         // จบใส่ javascript
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $('#btn_save_th').jqxButton({width: '100', height: '30', theme: theme});
+        $('#btn_save_en').jqxButton({width: '100', height: '30', theme: theme});
+
+        $("#btn_save_th").on('click', function ()
+        {
+            save_to_db('th');
+        });
+
+        $("#btn_save_en").on('click', function ()
+        {
+            save_to_db('en');
+        });
     });
+
+
+    function save_to_db(lang)
+    {
+        if (lang === 'th')
+        {
+            var url = "database/query.php";
+            $.ajax(
+                    {
+                        url: url,
+                        method: "POST",
+                        async: false,
+                        data:
+                                {
+                                    fc: 'save_restaurant',
+                                    lag: 'th',
+
+                                    restaurant_district_id: $('#restaurant_district_id_th').val(),
+                                    restaurant_province_id: $('#restaurant_province_id_th').val(),
+                                    restaurant_status: $('#restaurant_status_th').val(),
+                                    restaurant_geo_x: $('#restaurant_geo_x_th').val(),
+                                    restaurant_geo_y: $('#restaurant_geo_y_th').val(),
+                                    restaurant_info_tel: $('#restaurant_info_tel_th').val(),
+                                    restaurant_info_website: $('#restaurant_info_website_th').val(),
+                                    restaurant_info_email: $('#restaurant_info_email_th').val(),
+                                    restaurant_social_facebook: $('#restaurant_social_facebook_th').val(),
+                                    restaurant_social_instragram: $('#restaurant_social_instragram_th').val(),
+                                    restaurant_social_youtube: $('#restaurant_social_youtube_th').val(),
+                                    restaurant_cat: $('#restaurant_cat_th').val(),
+                                    restaurant_name: $('#restaurant_name_th').val(),
+                                    restaurant_address: $('#restaurant_address_th').val(),
+                                    restaurant_details_80: $('#restaurant_details_80_th').val(),
+                                    restaurant_details_200: $('#restaurant_details_200_th').val(),
+                                    restaurant_details_long: $('#restaurant_details_long_th').val(),
+                                    restaurant_open_hour: $('#restaurant_open_hour_th').val(),
+                                    restaurant_review_ref_short: $('#restaurant_review_ref_short_th').val(),
+                                    restaurant_review_ref_long: $('#restaurant_review_ref_long_th').val()
+                                }
+                    })
+                    .done(function (msg)
+                    {
+                        //alert(msg);
+                    });
+        } else if (lang === 'en')
+        {
+            var url = "database/query.php";
+            $.ajax(
+                    {
+                        url: url,
+                        method: "POST",
+                        async: false,
+                        data:
+                                {
+                                    fc: 'save_restaurant',
+                                    lag: 'en',
+                                    restaurant_district_id: $('#restaurant_district_id_en').val(),
+                                    restaurant_province_id: $('#restaurant_province_id_en').val(),
+                                    restaurant_status: $('#restaurant_status_en').val(),
+                                    restaurant_geo_x: $('#restaurant_geo_x_en').val(),
+                                    restaurant_geo_y: $('#restaurant_geo_y_en').val(),
+                                    restaurant_info_tel: $('#restaurant_info_tel_en').val(),
+                                    restaurant_info_website: $('#restaurant_info_website_en').val(),
+                                    restaurant_info_email: $('#restaurant_info_email_en').val(),
+                                    restaurant_social_facebook: $('#restaurant_social_facebook_en').val(),
+                                    restaurant_social_instragram: $('#restaurant_social_instragram_en').val(),
+                                    restaurant_social_youtube: $('#restaurant_social_youtube_en').val(),
+                                    restaurant_cat: $('#restaurant_cat_en').val(),
+                                    restaurant_name: $('#restaurant_name_en').val(),
+                                    restaurant_address: $('#restaurant_address_en').val(),
+                                    restaurant_details_80: $('#restaurant_details_80_en').val(),
+                                    restaurant_details_200: $('#restaurant_details_200_en').val(),
+                                    restaurant_details_long: $('#restaurant_details_long_en').val(),
+                                    restaurant_open_hour: $('#restaurant_open_hour_en').val(),
+                                    restaurant_review_ref_short: $('#restaurant_review_ref_short_en').val(),
+                                    restaurant_review_ref_long: $('#restaurant_review_ref_long_en').val()
+                                }
+                    })
+                    .done(function (msg)
+                    {
+                        //alert(msg);
+                    });
+        }
+        
+        window.open("restaurant.php", "_self");
+    }
 </script>
 <?php
 include_once 'footer.php';
