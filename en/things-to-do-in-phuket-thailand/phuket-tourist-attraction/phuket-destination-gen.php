@@ -2,9 +2,57 @@
 
 $path = "../..";
 
-$dID = "d00230";
-//contect db
+$dID = $_REQUEST['did'];
 
+//echo $dID;
+//contect db
+include_once($path.'/model/connect.php');
+
+$query = "SELECT * FROM `destination` LEFT JOIN (`district` LEFT JOIN `province` ON `district`.`province_id` = `province`.`province_id`) 
+            ON `destination`.`destination_district_id` = `district`.`district_id` WHERE `destination`.`destination_id` = '".$dID."'";
+			
+$query = "SELECT * FROM `destination` WHERE `destination_id` = '".$dID."'";
+//echo $strSQL;
+
+$result = mysqli_query($link, $query);
+
+/* associative array */
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);			
+
+$destination_id = $row['destination_id'];
+
+$destination_geo_x = $row['destination_geo_x'];
+$destination_geo_y = $row['destination_geo_y'];
+$destination_info_tel = $row['destination_info_tel'];
+$destination_info_fax = $row['destination_info_fax'];
+$destination_info_email = $row['destination_info_email'];
+$destination_info_website = $row['destination_info_website'];
+$destination_social_facebook = $row['destination_social_facebook'];
+$destination_social_instragram = $row['destination_social_instragram'];
+$destination_social_youtube = $row['destination_social_youtube'];
+
+$destination_cat = $row['destination_cat'];
+$destination_name = $row['destination_name'];
+$destination_address = $row['destination_address'];
+$destination_details_80 = $row['destination_details_80'];
+$destination_details_200 = $row['destination_details_200'];
+$destination_details_long = $row['destination_details_long'];
+$destination_open_hour = $row['destination_open_hour'];
+$destination_fee = $row['destination_fee'];
+$destination_visit_season = $row['destination_visit_season'];
+$destination_content_ref_short = $row['destination_content_ref_short'];
+$destination_content_ref_long = $row['destination_content_ref_long'];
+
+$destination_update = $row['destination_update'];
+$date = new DateTime($destination_update);
+$destination_update_str = date_format($date,"F d, Y");
+
+
+/* free result set */
+mysqli_free_result($result);
+
+/* close connection */
+mysqli_close($link);
 
 ?>
 <!DOCTYPE html>
@@ -19,10 +67,10 @@ $dID = "d00230";
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
         <!-- Favicons -->
-        <link rel="shortcut icon" href="<?php echo $path; ?>/assets/img/favicon.png">
-        <link rel="apple-touch-icon" href="<?php echo $path; ?>/assets/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $path; ?>/assets/img/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $path; ?>/assets/img/apple-touch-icon-114x114.png">
+        <link rel="shortcut icon" href="<?php echo $path; ?>/img/icons/favicon.png">
+        <link rel="apple-touch-icon" href="<?php echo $path; ?>/img/icons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $path; ?>/img/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $path; ?>/img/icons/apple-touch-icon-114x114.png">
 
         <!-- Load Core CSS 
         =====================================-->
@@ -47,29 +95,12 @@ $dID = "d00230";
         <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/owl-carousel/owl.theme.css">
         <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/owl-carousel/owl.transitions.css">
 
-        <!-- Load Color CSS - Please uncomment to apply the color.
-        =====================================      
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/yellow.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/brown.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/cyan.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/dark.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/green.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/orange.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/purple.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/pink.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/red.css">
-                <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/blue.css">-->
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/pasific.css">
+        <!-- Load Color CSS 
+        ===================================== -->
+        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/color/blue.css">
 
-        <!-- Load Fontbase Icons - Please Uncomment to use linea icons
-        =====================================       
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-arrows-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-basic-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-basic-elaboration-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-ecommerce-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-music-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-software-10.css">
-        <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/linea-weather-10.css">--> 
+        <!-- Load Fontbase Icons 
+        =====================================  --> 
         <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/font-awesome.css">
         <link rel="stylesheet" href="<?php echo $path; ?>/assets/css/icon/et-line-font.css">
 		
@@ -100,14 +131,14 @@ include($path."/header.php")
             <div class="container">
                 <div class="row mt60 mb20 ml10">
                     <div class="col-md-6 text-left">
-                        <h3 class="font-montserrat color-light">Kamala Beach 
+                        <h3 class="font-montserrat color-light"><?php echo $destination_name; ?>
 							<span class="glyphicon glyphicon-star color-red" aria-hidden=true></span>
 							<span class="glyphicon glyphicon-star color-red" aria-hidden=true></span>
 						</h3>
-						<h5 class="color-light alpha7">A peaceful, quiet beach located 2 km. north of Kalim and Patong beaches</h5>
+						<h5 class="color-light alpha7"><?php echo $destination_details_80; ?></h5>
                     </div>
                     <div class="col-md-6 text-right color-light pt30">
-						Page last updated: <b>May 24, 2017</b>
+						Page last updated: <b><?php echo $destination_update_str; ?></b>
                     </div>
                 </div>
             </div>
@@ -134,19 +165,19 @@ include($path."/header.php")
 							  <!-- Wrapper for slides -->
 							  <div class="carousel-inner">
 								<div class="item active">
-								  <img src="<?php echo $path; ?>/img/destination/phuket/phuket-d00230-kamala-beach-1.jpg" alt="Los Angeles">
+								  <img src="<?php echo $path; ?>/img/destination/phuket-d00230-kamala-beach-1.jpg" alt="Los Angeles">
 								</div>
 								<div class="item">
-								  <img src="<?php echo $path; ?>/img/destination/phuket/phuket-d00230-kamala-beach-2.jpg" alt="Chicago">
+								  <img src="<?php echo $path; ?>/img/destination/phuket-d00230-kamala-beach-2.jpg" alt="Chicago">
 								</div>
 								<div class="item">
-								  <img src="<?php echo $path; ?>/img/destination/phuket/phuket-d00230-kamala-beach-3.jpg" alt="New York">
+								  <img src="<?php echo $path; ?>/img/destination/phuket-d00230-kamala-beach-3.jpg" alt="New York">
 								</div>
 								<div class="item">
-								  <img src="<?php echo $path; ?>/img/destination/phuket/phuket-d00230-kamala-beach-4.jpg" alt="New York">
+								  <img src="<?php echo $path; ?>/img/destination/phuket-d00230-kamala-beach-4.jpg" alt="New York">
 								</div>
 								<div class="item">
-								  <img src="<?php echo $path; ?>/img/destination/phuket/phuket-d00230-kamala-beach-5.jpg" alt="New York">
+								  <img src="<?php echo $path; ?>/img/destination/phuket-d00230-kamala-beach-5.jpg" alt="New York">
 								</div>
 							  </div>
 
@@ -165,19 +196,22 @@ include($path."/header.php")
 						===================================== -->
 						<div class="row text-left ml5 mr5">
 							<h4>
-								A peaceful, quiet beach located two kilometers north of Kalim and Patong beaches, Kamala is home to Phuket’s luxurious resorts and Phuket’s muslim community
+								<?php echo $destination_details_200; ?>
 								<small class="heading heading-solid"></small>
 							</h4>
 							<p>
-								The enclosed bay offers safe swimming all year round. The ocean is completely calm November through April, with the occasional swell May through October. The absence of many of the activities found at other, busier beaches means it’s perfect for families with small children. Watch the kids as they paddle freely without the risk of running into a surfboard, while you sit back and catch some sun. For activity, check out the snorkelling off the north end of the beach November through April.
+								<?php echo $destination_details_long; ?>
 							</p>
-							<p>
-								Kamala Beach is very quiet and located in the South of Surin Beach. Grain of sand is not fine. The beach is approximately 2 km longs. There is a tsunami monument that is a reminder of the tsunami and the terrible damage it inflicted. There are also hotels, bungalow, shops and restaurants around this area.
-							</p>
-							
 							<div class="text-right content-ref">
-								<a href="https://www.expedia.co.th/Kamala-Beach-Kamala.d6176433.Attraction?langid=2057">https://www.expedia.co.th/</a><br />
-								<a href="https://na.tourismthailand.org/Attraction/Hat-Kamala--668">https://na.tourismthailand.org/</a><br />
+							<?php 
+								$ref_short_array = explode("|", $destination_content_ref_short);
+								$ref_long_array = explode("|", $destination_content_ref_long);
+								for( $i=0; $i < count($ref_short_array); $i++) {
+							?>
+								<a href="<?php echo $ref_long_array[$i]?>" target="_blank" rel="nofollow"><?php echo $ref_short_array[$i]?></a><br />
+							<?php 
+								}
+							?>
 							</div>
 						</div>
 
@@ -199,7 +233,7 @@ include($path."/header.php")
 						===================================== -->
 						<div class="bg-gray row mt50 pb25">
 							<h4 class="text-center pt20 mb20">
-								What's on Around Kamala Beach
+								What's on Around <?php echo $destination_name; ?>
 								<small class="heading heading-solid-icon center-block">
 									<span>&nbsp;</span>
 									<i class="fa fa-check"></i>
@@ -253,7 +287,7 @@ include($path."/header.php")
 						===================================== -->
 						<div class="row pt50 pb50">
 								<h4 class="text-center pt20 mb50">
-									Near By Accommodations 
+									Near By Accommodation
 									<small class="heading heading-solid-icon center-block">
 										<span>&nbsp;</span>
 										<i class="fa fa-suitcase"></i>
@@ -368,17 +402,16 @@ include($path."/header.php")
                             </h5>
 							<div id="local-info">
 								<i class="fa fa-clock-o fa-fw"></i>&nbsp;Hours
-								<div class="pl25 infor-text">24 Hour A peaceful, quiet beach located two kilometers north of Kalim and Patong beaches, Kamala </div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_open_hour) ?  "-" : $destination_open_hour;?></div>
 								<br>
 								<i class="fa fa-money fa-fw"></i>&nbsp;Fees
-								<div class="pl25 infor-text">No fee A peaceful, quiet beach located two kilometers north of Kalim and Patong beaches, Kamala </div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_fee) ?  "-" : $destination_fee;?></div>
 								<br>
 								<i class="fa fa-thumbs-o-up fa-fw"></i>&nbsp;Best Time to Visit
-								<div class="pl25 infor-text">November - Apri</div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_visit_season) ?  "-" : $destination_visit_season;?></div>
 								<br>
 								<i class="fa fa-map-marker fa-fw"></i>&nbsp;GPS :
-								<a href="http://maps.google.com/maps?q=7.956467, 98.282908" target="_blank" rel="nofollow"><span class="infor-text">7.956467, 98.282908</span>&nbsp;<i class="fa fa-external-link"></i></a>
-								
+								<a href="http://maps.google.com/maps?q=<?php echo $destination_geo_x;?>,<?php echo $destination_geo_y;?>" target="_blank" rel="nofollow"><span class="infor-text"><?php echo $destination_geo_x;?>, <?php echo $destination_geo_y;?></span>&nbsp;<i class="fa fa-external-link"></i></a>
 								<br>
 							</div>
 						</div>
@@ -392,30 +425,41 @@ include($path."/header.php")
                             </h5>
 							<div id="contact-info">
 								<i class="fa fa-envelope-o fa-fw"></i>&nbsp;Address
-								<div class="pl25 infor-text">Tambon Kamala<br />Kathu Phuket</div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_address) ?  $destination_district_name." ".$destination_province_name : $destination_address;?></div>
 								<br>
 								<i class="fa fa-phone fa-fw"></i>&nbsp;Telephone
-								<div class="pl25 infor-text">+66 (0)76-56812 <br/> +66 (0)76-56812</div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_info_tel) ?  "-" :  str_replace("|", "<br>", $destination_info_tel);?></div>
 								<br>
 								<i class="fa fa-fax fa-fw"></i>&nbsp;Fax
-								<div class="pl25 infor-text">+66 (0)76-56850 <br/> +66 (0)76-56812</div>
+								<div class="pl25 infor-text"><?php echo is_null($destination_info_fax) ?  "-" :  str_replace("|", "<br>", $destination_info_fax);?></div>
 								<br>
 								<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Website
 								<div class="pl25 infor-text">
-									<a href="http://wikitravel.org/en/Kamala" target="_blank" rel="nofollow">http://wikitravel.org/en/Kamala&nbsp;<i class="fa fa-external-link"></i></a> <br/>
-									<a href="http://wikitravel.org/en/Kamala" target="_blank" rel="nofollow">http://wikitravel.org/en/Kamala&nbsp;<i class="fa fa-external-link"></i></a>
+									<?php 	if (is_null($destination_info_website)) {
+												echo "-";
+											} else {
+												$www_array = explode("|", $destination_info_website);
+												for($i=0; $i < count($www_array); $i++){
+									?>
+									<a href="<?php echo $www_array[$i];?>" target="_blank" rel="nofollow"><?php echo $www_array[$i]?>&nbsp;<i class="fa fa-external-link"></i></a> <?php echo($i == count($www_array)-1) ? '' : '<br/>' ?>
+									<?php
+												}
+											}
+									?>
 								</div>
 								<br>
 								<i class="fa fa-at fa-fw"></i>&nbsp;Email
-								<div class="pl25 infor-text">naong@gmail.com<br /> noppachai.w@phuket.psu.ac.th</div>
+								<div class="pl25 infor-text">naong@gmail.com<br/> noppachai.w@phuket.psu.ac.th</div>
 								<br>
+								<?php if( !is_null($destination_social_facebook) || !is_null($destination_social_instragram) || !is_null($destination_social_youtube) ){ ?>
 								<i class="fa fa-comment-o fa-fw"></i>&nbsp;Social
 								<br>
 								<div class="social social-one" style="margin-top: 10px; float: left">
-									<a href="https://www.facebook.com/oneandaman/" target="_blank"><i class="fa fa-facebook color-primary"></i></a>
-									<a href="https://www.youtube.com/channel/UCTQ2V3YqsqBLz4z0ZPqRNlA" target="_blank"><i class="fa fa-youtube-play color-red"></i></a>
-									<a href="https://www.instagram.com/oneandaman/" target="_blank"><i class="fa fa-instagram color-dark"></i></a>
+									<?php echo is_null($destination_social_facebook) ?  '' :  '<a href="'.$destination_social_facebook.'" target="_blank"><i class="fa fa-facebook color-primary"></i></a>' ?>
+									<?php echo is_null($destination_social_instragram) ?  '' :  '<a href="'.$destination_social_instragram.'" target="_blank"><i class="fa fa-youtube-play color-red"></i></a>' ?>
+									<?php echo is_null($destination_social_youtube) ?  '' :  '<a href="'.$destination_social_youtube.'" target="_blank"><i class="fa fa-instagram color-dark"></i></a>' ?>
 								</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
