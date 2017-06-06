@@ -86,7 +86,7 @@ include_once 'script.php';
         $("#grid_dash_th").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -95,11 +95,11 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Accommodation Id', dataField: 'accommodation_id', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Status', dataField: 'accommodation_status', align: 'center', minwidth: 74.5, width: '15%'},
-                        {text: 'Accommodation Name', dataField: 'accommodation_name', align: 'center', minwidth: 74.5, width: '25%'},
-                        {text: 'District', dataField: 'accommodation_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'accommodation_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'accommodation_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '30%'},
+                        {text: 'สถานะ', dataField: 'accommodation_status', align: 'center', minwidth: 74.5, width: '15%'},
+                        {text: 'ชื่อ', dataField: 'accommodation_name', align: 'center', minwidth: 74.5, width: '25%'},
+                        {text: 'อำเภอ', dataField: 'accommodation_district_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'accommodation_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'}
                     ]
                 });
 
@@ -132,7 +132,7 @@ include_once 'script.php';
         $("#grid_dash_en").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -141,11 +141,11 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Accommodation Id', dataField: 'accommodation_id', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Status', dataField: 'accommodation_status', align: 'center', minwidth: 74.5, width: '15%'},
-                        {text: 'Accommodation Name', dataField: 'accommodation_name', align: 'center', minwidth: 74.5, width: '25%'},
-                        {text: 'District', dataField: 'accommodation_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'accommodation_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'accommodation_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '30%'},
+                        {text: 'สถานะ', dataField: 'accommodation_status', align: 'center', minwidth: 74.5, width: '15%'},
+                        {text: 'ชื่อ', dataField: 'accommodation_name', align: 'center', minwidth: 74.5, width: '25%'},
+                        {text: 'อำเภอ', dataField: 'accommodation_district_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'accommodation_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'}
                     ]
                 });
 

@@ -83,7 +83,7 @@ include_once 'script.php';
         $("#grid_dash_th").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -92,8 +92,8 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Accommodation Id', dataField: 'accommodation_room_tag_list_id', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'Accommodation Room Tag', dataField: 'accommodation_room_tag', align: 'center', minwidth: 74.5, width: '80%'}
+                        {text: 'รหัส', dataField: 'accommodation_room_tag_list_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '20%'},
+                        {text: 'รายละเอียด', dataField: 'accommodation_room_tag', align: 'center', minwidth: 74.5, width: '80%'}
                     ]
                 });
 
@@ -123,7 +123,7 @@ include_once 'script.php';
         $("#grid_dash_en").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -132,8 +132,8 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Accommodation Id', dataField: 'accommodation_room_tag_list_id', align: 'center', minwidth: 64, width: '20%'},
-                        {text: 'Accommodation Room Tag', dataField: 'accommodation_room_tag', align: 'center', minwidth: 74.5, width: '80%'}
+                        {text: 'รหัส', dataField: 'accommodation_room_tag_list_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '20%'},
+                        {text: 'รายละเอียด', dataField: 'accommodation_room_tag', align: 'center', minwidth: 74.5, width: '80%'}
                     ]
                 });
 

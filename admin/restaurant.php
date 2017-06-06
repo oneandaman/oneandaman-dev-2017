@@ -87,7 +87,7 @@ include_once 'script.php';
         $("#grid_dash_th").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -96,11 +96,11 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Restaurant Id', dataField: 'restaurant_id', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Status', dataField: 'restaurant_status', align: 'center', minwidth: 74.5, width: '15%'},
-                        {text: 'Restaurant Name', dataField: 'restaurant_name', align: 'center', minwidth: 74.5, width: '25%'},
-                        {text: 'District', dataField: 'restaurant_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'restaurant_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'restaurant_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '30%'},
+                        {text: 'สถานะ', dataField: 'restaurant_status', align: 'center', minwidth: 74.5, width: '15%'},
+                        {text: 'ชื่อ', dataField: 'restaurant_name', align: 'center', minwidth: 74.5, width: '25%'},
+                        {text: 'อำเภอ', dataField: 'restaurant_district_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'restaurant_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'}
                     ]
                 });
 
@@ -137,7 +137,7 @@ include_once 'script.php';
         $("#grid_dash_en").jqxGrid(
                 {
                     width: '100%',
-                    //height: '592px',
+                    height: '420px',
                     pagermode: "simple",
                     pageable: true,
                     source: dataAdapter,
@@ -146,11 +146,11 @@ include_once 'script.php';
                     columnsheight: 40,
                     rowsheight: 34,
                     columns: [
-                        {text: 'Restaurant Id', dataField: 'restaurant_id', align: 'center', minwidth: 64, width: '30%'},
-                        {text: 'Status', dataField: 'restaurant_status', align: 'center', minwidth: 74.5, width: '15%'},
-                        {text: 'Restaurant Name', dataField: 'restaurant_name', align: 'center', minwidth: 74.5, width: '25%'},
-                        {text: 'District', dataField: 'restaurant_district_id', align: 'center', minwidth: 64, width: '15%'},
-                        {text: 'Province', dataField: 'restaurant_province_id', align: 'center', minwidth: 64, width: '15%'}
+                        {text: 'รหัส', dataField: 'restaurant_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '30%'},
+                        {text: 'สถานะ', dataField: 'restaurant_status', align: 'center', minwidth: 74.5, width: '15%'},
+                        {text: 'ชื่อ', dataField: 'restaurant_name', align: 'center', minwidth: 74.5, width: '25%'},
+                        {text: 'อำเภอ', dataField: 'restaurant_district_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'},
+                        {text: 'จังหวัด', dataField: 'restaurant_province_id', align: 'center', cellsalign: 'center' , minwidth: 64, width: '15%'}
                     ]
                 });
 
