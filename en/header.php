@@ -9,7 +9,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="#page-top">
-                        <img src="<?php echo $path; ?>/img/icons/oneandaman-logo.png" alt="logo">
+						<img src="<?php echo $path; ?>/img/icons/oneandaman-logo.png" alt="logo"> 
                         OneAndaman
                     </a>
                 </div>
