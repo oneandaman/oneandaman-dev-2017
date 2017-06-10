@@ -32,9 +32,20 @@ Author     : Nattapong  Kothong
         <script src="Respond/dest/respond.min.js" type="text/javascript"></script>
         <![endif]-->
         <link href="styles/style.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .row
+            {
+                margin-left: 0;
+                margin-right: 0;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #FFF; z-index:9999;}
+        </style>
 
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+        <div id="cover"></div>
         <div class="wrapper">
 
             <header class="main-header">
@@ -155,27 +166,7 @@ Author     : Nattapong  Kothong
                             </a>
                         </li>
 
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-globe "></i>
-                                <span>Region</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="distinct.php"><i class="fa fa-flag"></i> Distinct</a></li>
-                                <li><a href="province.php"><i class="fa fa-flag"></i> Province</a></li>
-                            </ul>
-                        </li>
 
-
-                        <li class="treeview">
-                            <a href="travel_route.php">
-                                <i class="fa fa-road"></i>
-                                <span>Travel Route</span>
-                            </a>
-                        </li>
 
                         <li class="header">SEO</li>
                         <li class="treeview">
