@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -16,6 +18,50 @@ else
         $function_name = $_POST['fc'];
     }
 }
+if ($function_name == 'login')
+{
+    $connect = $c;
+    include 'connect.php';
+    date_default_timezone_set("Asia/Bangkok");
+
+    $username = $_POST['txtUsername'];
+    $password = md5($_POST['txtPassword']);
+    //echo md5('12345');
+
+    $query = "select * from backend_user where backend_user_name = '$username' AND backend_user_pw = '$password' AND backend_user_status = 1";
+    $data = query_where($query);
+
+    if ($data['backend_user_id'] != null)
+    {
+        $_SESSION['backend_user_id'] = $data['backend_user_id'];
+        $_SESSION['backend_user_name'] = $data['backend_user_name'];
+        $_SESSION['backend_user_group'] = $data['backend_user_group'];
+        $_SESSION['backend_user_time'] = time() + (5 * 60);
+
+        $data_log = array(
+            "backend_user_id " => $data['backend_user_id'],
+            "backend_user_log_timestamp" => date("Y-m-d H:i:s")
+        );
+        insert("backend_user_log", $data_log);
+        ?>
+        <meta http-equiv='refresh' content='0;URL=../destination.php'>
+        <?php
+    }
+    else
+    {
+        //echo "Login Again";
+        unset($_SESSION["backend_user_id"]);
+        unset($_SESSION["backend_user_name"]);
+        unset($_SESSION["backend_user_group"]);
+        unset($_SESSION["backend_user_time"]);
+
+        $_SESSION['login_warning'] = "Username or Password is wrong. Please Try Again.";
+        ?>
+        <meta http-equiv='refresh' content='0;URL=../login.php'>
+        <?php
+    }
+}
+
 if ($function_name == 'save_accommodation')
 {
 
@@ -83,29 +129,156 @@ if ($function_name == 'save_destination')
     $destination_cat = $_POST['destination_cat'];
     $destination_name = $_POST['destination_name'];
     $destination_address = $_POST['destination_address'];
-    $destination_details_80 = $_POST['destination_details_80'];
-    $destination_details_200 = $_POST['destination_details_200'];
-    $destination_details_long = $_POST['destination_details_long'];
+    $destination_details_80 = str_replace("'", "\'", $_POST['destination_details_80']);
+    $destination_details_200 = str_replace("'", "\'", $_POST['destination_details_200']);
+    $destination_details_long = str_replace("'", "\'", $_POST['destination_details_long']);
     $destination_open_hour = $_POST['destination_open_hour'];
     $destination_fee = $_POST['destination_fee'];
     $destination_visit_season = $_POST['destination_visit_season'];
-    $destination_content_ref_short = $_POST['destination_content_ref_short'];
-    $destination_content_ref_long = $_POST['destination_content_ref_long'];
+
+    $destination_content_ref_1 = $_POST['destination_content_ref_1'];
+    $destination_content_ref_2 = $_POST['destination_content_ref_2'];
+    $destination_content_ref_3 = $_POST['destination_content_ref_3'];
+    $destination_content_ref_4 = $_POST['destination_content_ref_4'];
+    $destination_content_ref_5 = $_POST['destination_content_ref_5'];
+    $destination_update = $_POST['destination_update'];
+    $destination_activity = $_POST['destination_activity'];
 
 
-    if ($lag == 'th')
+    if ($lag == "th")
     {
         $connect = $a;
     }
-    else
+    if ($lag == "en")
     {
         $connect = $b;
     }
     include 'connect.php';
-    $query = "INSERT INTO `destination` (`destination_district_id`, `destination_province_id`, `destination_status`, `destination_geo_x`, `destination_geo_y`, `destination_info_tel`, `destination_info_fax`, `destination_info_email`, `destination_info_website`, `destination_social_facebook`, `destination_social_instragram`, `destination_social_youtube`, `destination_cat`, `destination_name`, `destination_address`, `destination_details_80`, `destination_details_200`, `destination_details_long`, `destination_open_hour`, `destination_fee`, `destination_visit_season`, `destination_content_ref_short`, `destination_content_ref_long`) VALUES "
-            . "('$destination_district_id', '$destination_province_id', '$destination_status', '$destination_geo_x', '$destination_geo_y', '$destination_info_tel', '$destination_info_fax', '$destination_info_email', '$destination_info_website', '$destination_social_facebook', '$destination_social_instragram', '$destination_social_youtube', '$destination_cat', '$destination_name', '$destination_address', '$destination_details_80', '$destination_details_200', '$destination_details_long', '$destination_open_hour', '$destination_fee', '$destination_visit_season', '$destination_content_ref_short', '$destination_content_ref_long');";
 
+    //Check index_num_runup Table
+    $chk_runup = count_table_record('index_num_runup');
+    if ($chk_runup == 0 || $chk_runup == NULL)
+    {
+        $data_insert_runup = array(
+            "id" => '1',
+            "destination_runup_num" => '331',
+            "restaurant_runup_num" => '0',
+            "accommodation_runup_num" => '0'
+        );
+        insert("index_num_runup", $data_insert_runup);
+    }
+
+    //Set Destination ID
+    $runup = query_by_id('index_num_runup', '1');
+    $last_destination_id = $runup['destination_runup_num'];
+    $count_runup_num = strlen($last_destination_id);
+
+    if ($count_runup_num == 1)
+    {
+        $set_destination_id = "d0000" . ($last_destination_id + 1);
+    }
+    else if ($count_runup_num == 2)
+    {
+        $set_destination_id = "d000" . ($last_destination_id + 1);
+    }
+    else if ($count_runup_num == 3)
+    {
+        $set_destination_id = "d00" . ($last_destination_id + 1);
+    }
+    else if ($count_runup_num == 4)
+    {
+        $set_destination_id = "d0" . ($last_destination_id + 1);
+    }
+    else if ($count_runup_num == 5)
+    {
+        $set_destination_id = "d" . ($last_destination_id + 1);
+    }
+    else
+    {
+        $set_destination_id = "";
+    }
+
+    //Insert Destination
+    $query = "INSERT INTO `destination` (`destination_id`, `destination_district_id`, `destination_province_id`, `destination_status`, `destination_geo_x`, `destination_geo_y`, `destination_info_tel`, `destination_info_fax`, `destination_info_email`, `destination_info_website`, `destination_social_facebook`, `destination_social_instragram`, `destination_social_youtube`, `destination_cat`, `destination_name`, `destination_address`, `destination_details_80`, `destination_details_200`, `destination_details_long`, `destination_open_hour`, `destination_fee`, `destination_visit_season`, `destination_content_ref_1`, `destination_content_ref_2`, `destination_content_ref_3`, `destination_content_ref_4`, `destination_content_ref_5`, `destination_update`) VALUES "
+            . "('$set_destination_id','$destination_district_id', '$destination_province_id', '$destination_status', '$destination_geo_x', '$destination_geo_y', '$destination_info_tel', '$destination_info_fax', '$destination_info_email', '$destination_info_website', '$destination_social_facebook', '$destination_social_instragram', '$destination_social_youtube', '$destination_cat', '$destination_name', '$destination_address', '$destination_details_80', '$destination_details_200', '$destination_details_long', '$destination_open_hour', '$destination_fee', '$destination_visit_season', '$destination_content_ref_1', '$destination_content_ref_2', '$destination_content_ref_3', '$destination_content_ref_4', '$destination_content_ref_5', '$destination_update');";
     $result = mysqli_query($connect, $query);
+
+
+    //Update index_num_runup Table
+    $data_index_num_runup_update = array(
+        "destination_runup_num" => ($last_destination_id + 1)
+    );
+    update("index_num_runup", $data_index_num_runup_update, "id=1");
+
+
+    //Insert destination_type_tag Table
+    if (trim($destination_cat) != '')
+    {
+        $count_destination_cat = substr_count($destination_cat, ",");
+
+        if ($count_destination_cat > 0)
+        {
+            $split_destination_cat = explode(",", $destination_cat);
+            $dc = 0;
+            while ($dc < count($split_destination_cat))
+            {
+                if (trim($split_destination_cat[$dc]) != '')
+                {
+                    $data_insert_destination_type_tag = array(
+                        "destination_id" => $set_destination_id,
+                        "destination_type_tag" => $split_destination_cat[$dc]
+                    );
+                    insert("destination_type_tag", $data_insert_destination_type_tag);
+                }
+                $dc++;
+            }
+        }
+        else
+        {
+            $data_insert_destination_type_tag = array(
+                "destination_id" => $set_destination_id,
+                "destination_type_tag" => $destination_cat
+            );
+            insert("destination_type_tag", $data_insert_destination_type_tag);
+        }
+    }
+
+
+
+    //Insert destination_activity_tag Table
+    if (trim($destination_activity) != '')
+    {
+        $count_destination_activity = substr_count($destination_activity, ",");
+        if ($count_destination_activity > 0)
+        {
+            $split_destination_activity = explode(",", $destination_activity);
+
+            $da = 0;
+            while ($da < count($split_destination_activity))
+            {
+                if (trim($split_destination_activity[$da]) != '')
+                {
+                    $data_insert_destination_activity_tag = array(
+                        "destination_id" => $set_destination_id,
+                        "destination_activites_tag" => $split_destination_activity[$da]
+                    );
+                    insert("destination_activity_tag", $data_insert_destination_activity_tag);
+                }
+                $da++;
+            }
+        }
+        else
+        {
+            $data_insert_destination_activity_tag = array(
+                "destination_id" => $set_destination_id,
+                "destination_activites_tag" => $destination_activity
+            );
+            insert("destination_activity_tag", $data_insert_destination_activity_tag);
+        }
+    }
+
+
+
     include 'close.php';
 }
 
@@ -343,7 +516,7 @@ if ($function_name == 'get_destination')
     include 'connect.php';
     $query = "SELECT a.destination_id, c.district_name as destination_district_id, b.province_name as destination_province_id, d.destination_type_tag as destination_cat, if(a.destination_status = 1, 'Enable', 'Disable') as destination_status, a.destination_geo_x,a.destination_geo_y, a.destination_info_tel,a.destination_info_fax, a.destination_info_email, "
             . "a.destination_info_website, a.destination_social_facebook, a.destination_social_instragram, a.destination_social_youtube, a.destination_name, a.destination_address, a.destination_details_80, a.destination_details_200, a.destination_details_long, a.destination_open_hour, a.destination_fee, a.destination_visit_season, "
-            . "a.destination_content_ref_short, a.destination_content_ref_long FROM destination AS a LEFT JOIN province AS b ON a.destination_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = b.province_id LEFT JOIN destination_type_tag_list AS d ON a.destination_cat = d.destination_type_tag_list_id";
+            . "a.destination_content_ref_1, a.destination_content_ref_2, a.destination_content_ref_3, a.destination_content_ref_4, a.destination_content_ref_5 FROM destination AS a LEFT JOIN province AS b ON a.destination_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = b.province_id LEFT JOIN destination_type_tag_list AS d ON a.destination_cat = d.destination_type_tag_list_id";
     include 'json.php';
 }
 
@@ -466,7 +639,7 @@ if ($function_name == 'get_event')
         $connect = $b;
     }
     include 'connect.php';
-    $query = "SELECT a.event_id, c.district_name as event_venue_district_id, b.province_name as event_venue_province_id, a.event_name, a.event_detail, a.event_info_link_short, a.event_info_link_long, a.event_venue, a.event_geo_x, a.event_geo_y, a.event_start_date, a.event_end_date FROM `event` AS a LEFT JOIN province AS b ON a.event_venue_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = c.district_id";    
+    $query = "SELECT a.event_id, c.district_name as event_venue_district_id, b.province_name as event_venue_province_id, a.event_name, a.event_detail, a.event_info_link_short, a.event_info_link_long, a.event_venue, a.event_geo_x, a.event_geo_y, a.event_start_date, a.event_end_date FROM `event` AS a LEFT JOIN province AS b ON a.event_venue_province_id = b.province_id LEFT JOIN district AS c ON b.province_id = c.district_id";
     include 'json.php';
 }
 
@@ -504,4 +677,153 @@ if ($function_name == 'get_district')
     include 'connect.php';
     $query = "SELECT * FROM district where province_id = '$province_id' ";
     include 'json.php';
+}
+
+
+/////////////////////////////////////// edit
+if ($function_name == 'get_des_update')
+{
+    $lag = $_POST['lag'];
+    $destination_id = $_POST['destination_id'];
+
+    if ($lag == 'th')
+    {
+        $connect = $a;
+    }
+    else
+    {
+        $connect = $b;
+    }
+    include 'connect.php';
+    $query = "SELECT * FROM destination where destination_id = '$destination_id' ";
+    include 'json.php';
+}
+
+if ($function_name == 'edit_destination')
+{
+    $lag = $_POST['lag'];
+
+    $destination_id = $_POST['destination_id'];
+    $destination_cat = $_POST['destination_cat'];
+    $destination_activity = $_POST['destination_activity'];
+    $destination_details_80 = str_replace("'", "\'", $_POST['destination_details_80']);
+    $destination_details_200 = str_replace("'", "\'", $_POST['destination_details_200']);
+    $destination_details_long = str_replace("'", "\'", $_POST['destination_details_long']);
+
+
+    if ($lag == 'th')
+    {
+        $connect = $a;
+    }
+    else if ($lag == 'en')
+    {
+        $connect = $b;
+    }
+    include 'connect.php';
+
+    $destination_data_update = array(
+        "destination_district_id" => $_POST['destination_district_id'],
+        "destination_province_id" => $_POST['destination_province_id'],
+        "destination_status" => $_POST['destination_status'],
+        "destination_geo_x" => $_POST['destination_geo_x'],
+        "destination_geo_y" => $_POST['destination_geo_y'],
+        "destination_info_tel" => $_POST['destination_info_tel'],
+        "destination_info_fax" => $_POST['destination_info_fax'],
+        "destination_info_email" => $_POST['destination_info_email'],
+        "destination_info_website" => $_POST['destination_info_website'],
+        "destination_social_facebook" => $_POST['destination_social_facebook'],
+        "destination_social_instragram" => $_POST['destination_social_instragram'],
+        "destination_social_youtube" => $_POST['destination_social_youtube'],
+        "destination_cat" => $_POST['destination_cat'],
+        "destination_name" => $_POST['destination_name'],
+        "destination_address" => $_POST['destination_address'],
+        "destination_details_80" => $destination_details_80,
+        "destination_details_200" => $destination_details_200,
+        "destination_details_long" => $destination_details_long,
+        "destination_open_hour" => $_POST['destination_open_hour'],
+        "destination_fee" => $_POST['destination_fee'],
+        "destination_visit_season" => $_POST['destination_visit_season'],
+        "destination_content_ref_1" => $_POST['destination_content_ref_1'],
+        "destination_content_ref_2" => $_POST['destination_content_ref_2'],
+        "destination_content_ref_3" => $_POST['destination_content_ref_3'],
+        "destination_content_ref_4" => $_POST['destination_content_ref_4'],
+        "destination_content_ref_5" => $_POST['destination_content_ref_5'],
+        "destination_update" => $_POST['destination_update']
+    );
+
+    update("destination", $destination_data_update, "destination_id = '" . $destination_id . "'");
+ 
+    //Insert destination_type_tag Table
+    if (trim($destination_cat) != '')
+    {
+        //delete all destination cat
+        delete('destination_type_tag', "destination_id = '" . $destination_id . "'");
+
+
+        $count_destination_cat = substr_count($destination_cat, ",");
+
+        if ($count_destination_cat > 0)
+        {
+            $split_destination_cat = explode(",", $destination_cat);
+            $dc = 0;
+            while ($dc < count($split_destination_cat))
+            {
+                if (trim($split_destination_cat[$dc]) != '')
+                {
+                    $data_insert_destination_type_tag = array(
+                        "destination_id" => $destination_id,
+                        "destination_type_tag" => $split_destination_cat[$dc]
+                    );
+                    insert("destination_type_tag", $data_insert_destination_type_tag);
+                }
+                $dc++;
+            }
+        }
+        else
+        {
+            $data_insert_destination_type_tag = array(
+                "destination_id" => $destination_id,
+                "destination_type_tag" => $destination_cat
+            );
+            insert("destination_type_tag", $data_insert_destination_type_tag);
+        }
+    }
+    //Insert destination_activity_tag Table
+    if (trim($destination_activity) != '')
+    {
+        //delete all destination cat
+
+        delete('destination_activity_tag', "destination_id = '" . $destination_id . "'");
+
+        $count_destination_activity = substr_count($destination_activity, ",");
+        if ($count_destination_activity > 0)
+        {
+            $split_destination_activity = explode(",", $destination_activity);
+
+            $da = 0;
+            while ($da < count($split_destination_activity))
+            {
+                if (trim($split_destination_activity[$da]) != '')
+                {
+                    $data_insert_destination_activity_tag = array(
+                        "destination_id" => $destination_id,
+                        "destination_activites_tag" => $split_destination_activity[$da]
+                    );
+                    insert("destination_activity_tag", $data_insert_destination_activity_tag);
+                }
+                $da++;
+            }
+        }
+        else
+        {
+            $data_insert_destination_activity_tag = array(
+                "destination_id" => $destination_id,
+                "destination_activites_tag" => $destination_activity
+            );
+            insert("destination_activity_tag", $data_insert_destination_activity_tag);
+        }
+    }
+
+
+    include 'close.php';
 }

@@ -1,0 +1,240 @@
+/*!
+ * modify.css
+ * Version: 0.1
+ * Author: Noppachai
+
+ * Modify CSS for OneAndaman.com website
+ */
+
+ 
+.fact-title a {
+	color: #fff;
+	cursor : pointer;
+}
+
+.fact-title a:hover {
+	color: #ff4530;
+}
+
+.destination-thumbnail-block {
+	background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px #ddd;
+	padding: 0 0 3px;
+    text-align: center;
+    transition: all 0.25s ease-in-out 0s;
+	height : 290px;
+}
+
+.item-hide {
+	display: none;
+}
+
+/* sugested hotel slide */
+
+.suggested-hotel .suggested-hotel-header img {
+    height: 90px;
+    width: 90px;
+}
+
+.suggested-hotel-left {
+    padding: 0 20px;
+    text-align: left;
+}
+
+.suggested-hotel-left .suggested-hotel-header {
+    float: left;
+    margin-right: 20px;
+}
+
+.suggested-hotel-left .suggested-hotel-footer {
+    margin-left: 80px;
+}
+
+.suggested-hotel .suggested-hotel-header {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.suggested-hotel .suggested-hotel-footer {
+    font-size: 12px;
+	color: #ff4530;
+}
+
+.suggested-hotel-right {
+    padding: 0 20px;
+    text-align: right;
+}
+
+.suggested-hotel-body p {
+		font-size: 13px;
+}
+
+
+
+.fact-title a {
+	color: #fff;
+	cursor : pointer;
+}
+
+.fact-title a:hover {
+	color: #ff4530;
+}
+
+/* portfolio */
+#portfolioMasonry .portfolio-masonry-one-item {
+    width: 180px;
+	margin-bottom : 5px;
+}
+
+.portfolio-menu-active {
+	color: #ff4530 !important;
+}
+
+#portfolioMasonry ul li, #portfolioGrid ul li {
+    margin: 0 10px;
+}
+
+#portfolioGrid ul li a {
+    font-size: 15px;
+}
+
+
+/* for map image and tag on sidebar */
+.img-float-center {
+    display: block;
+    margin: auto;
+}
+
+#tag-container ul.tag li {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #747474;
+    display: inline-block;
+    float: left;
+    font-family: "Open Sans",sans-serif;
+    font-size: 13px;
+    margin: 0 5px 5px 0;
+    padding: 5px 7px;
+}
+
+
+/* event */
+#event-list ul.shop-sidebar {
+    margin: 0;
+    padding: 0;
+}
+#event-list ul.shop-sidebar li::before {
+    color: #8b949b;
+    content: "";
+    float: left;
+    font-family: "FontAwesome";
+    margin-right: 15px;
+}
+
+#event-list ul.shop-sidebar li {
+    border-bottom: 1px dotted #ccc;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    list-style: outside none none;
+    padding: 7px 0;
+}
+
+
+/* footer */
+#footer p {
+		font-size: 13px;
+}
+
+.logo-footer{
+	vertical-align: middle;
+	line-height: 10px;
+	font-family: "Pacifico",cursive;
+	font-size: 22px;
+}
+
+/* header */
+.navbar-nav > li > a {
+    padding: 15px 10px;
+}
+
+.navbar-collapse {
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+
+
+/* langage menu */
+
+.lan-menu {
+	display: block;
+	padding: 15px 25px;
+	line-height: 20px;
+	position: relative;
+}
+.lan-menu a {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+
+
+/* other */
+
+.content-ref {
+	font-size: 13px;	
+}
+
+.infor-text {
+	font-size: 13px;
+}
+
+.badge {
+    padding: 5px 10px;
+}
+
+
+/* remove carousel-control background */
+.carousel-control { 
+	background: none !important; 
+	filter: none !important; 
+	progid:none !important; 
+}
+
+
+
+.content-box.content-box-icon span {
+	margin-bottom: 0px;
+    padding-top: 10px;
+	height: 55px;
+}
+
+.text-box-body {
+	width:70%; 
+    border-radius: 5px;
+    color: #000;
+    margin: auto;
+	padding: 20px;
+    position: relative;
+}
+
+.text-box-body p{
+    color: #fff;
+	margin: 0px;
+}
+
+.text-box span {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* remove province button in Intro Area when show on mobile */ 
+@media(max-width:766px) {
+	#province-bn {
+		display: none;
+	}
+}
