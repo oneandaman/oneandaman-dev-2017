@@ -1,0 +1,91 @@
+/*  --------------------------------------------------------
+Index Map
+-------------------------------------------------------- */
+.fact, .factor {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 45px;
+    margin-bottom: 10px;
+    font-weight: 100;
+  
+}
+.fact-title-map {
+    font-size: 15px;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.img-center {
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/*  --------------------------------------------------------
+Set Scroll  **
+-------------------------------------------------------- */
+.navbar-collapse.in , .navbar-collapse.collapsing {
+	overflow-y: visible;
+}
+
+
+
+/*  --------------------------------------------------------
+Popular Destination Block
+-------------------------------------------------------- */
+
+.shop-item-container-in 
+{
+    background: #fff;
+    border: 1px solid #eaeff3;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            height: 430px;
+            padding-top: 0px;
+}
+.shop-item-container-in:hover {
+    -webkit-box-shadow: 0 0 40px #ddd;
+}
+.shop-item-container-out-content {
+    margin-right: 0px;
+}
+.shop-item-container-in-content 
+{
+    background: #fff;
+    border: 1px solid #eaeff3;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: all .25s ease-in-out;
+       -moz-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            padding-top: 0px;
+}
+.shop-item-container-in-content:hover {
+    -webkit-box-shadow: 0 0 40px #ddd;
+}
+
+.shop-item-title-content {
+    font-size: 12px;
+    margin: 7px;
+    color: #323a45;
+}
+.shop-item-price-content {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+.shop-item-title {
+    font-size: 12px;
+    margin: 7px;
+    color: #323a45;
+}
+.shop-item-price {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+}

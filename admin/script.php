@@ -40,6 +40,16 @@
 <script src="jqwidgets/jqxtabs.js" type="text/javascript"></script>
 <script src="jqwidgets/jqxbuttons.js" type="text/javascript"></script>
 
+
+<script src="jqwidgets/jqxeditor.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxcore.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxscrollbar.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxdropdownbutton.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxcolorpicker.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxwindow.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxtooltip.js" type="text/javascript"></script>
+<script src="jqwidgets/jqxcheckbox.js" type="text/javascript"></script>
+
 <script>
     $(window).on('load', function ()
     {

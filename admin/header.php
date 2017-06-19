@@ -68,7 +68,7 @@ Author     : Nattapong  Kothong
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="dist/img/blank.gif" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">User Name</span>
+                                    <span class="hidden-xs"><?php echo $_SESSION['backend_user_name']; ?></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
@@ -76,18 +76,18 @@ Author     : Nattapong  Kothong
                                         <img src="dist/img/blank.gif" class="img-circle" alt="User Image">
 
                                         <p>
-                                            User Name
-                                            <small>Administrator</small>
+                                            <?php echo $_SESSION['backend_user_name']; ?>
+                                            <small><?php echo $_SESSION['backend_user_group']; ?></small>
                                         </p>
                                     </li>
 
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
-                                        <div class="pull-left">
+                                        <!-- <div class="pull-left">
                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
+                                        </div> -->
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -120,76 +120,84 @@ Author     : Nattapong  Kothong
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
-                        <li class="active treeview">
-                            <a href="destination.php">
-                                <i class="fa fa-map"></i>
-                                <span>Destinations</span>
-                            </a>
-                        </li>
 
-                        <li class="treeview">
-                            <a href="restaurant.php">
-                                <i class="fa fa-cutlery"></i>
-                                <span>Restaurants</span>
-                            </a>
-                        </li>
+                        <?php
+                        if ($_SESSION['backend_user_group'] == 'seo-team' || $_SESSION['backend_user_group'] == 'content-team' || $_SESSION['backend_user_group'] == 'admin')
+                        {
+                            ?>
+                            <li class="active treeview">
+                                <a href="destination.php"><i class="fa fa-map"></i><span>Destinations</span></a>
+                            </li>
 
-                        <li class="treeview">
-                            <a href="accommodation.php">
-                                <i class="fa fa-bed"></i>
-                                <span>Accommodations</span>
-                            </a>
-                        </li>
+                            <li class="treeview">
+                                <a href="restaurant.php"><i class="fa fa-cutlery"></i><span>Restaurants</span></a>
+                            </li>
 
+                            <li class="treeview">
+                                <a href="accommodation.php"><i class="fa fa-bed"></i><span>Accommodations</span></a>
+                            </li>
+                            <?php
+                        }
+                        if ($_SESSION['backend_user_group'] == 'seo-team' || $_SESSION['backend_user_group'] == 'admin')
+                        {
+                            ?>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-tags"></i>
+                                    <span>Tags</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="tag_destination_type.php"><i class="fa fa-tag"></i> Destination Type Tag</a></li>
+                                    <li><a href="tag_destination_activity.php"><i class="fa fa-tag"></i> Destination Activity Tag</a></li>
+                                    <li><a href="tag_restaurant_type.php"><i class="fa fa-tag"></i> Restaurant Type Tag</a></li>
+                                    <li><a href="tag_accommodation_type.php"><i class="fa fa-tag"></i> Accommodation Type Tag</a></li>
+                                    <li><a href="tag_accommodation_room.php"><i class="fa fa-tag"></i> Accommodation Room Tag</a></li>
+                                </ul>
+                            </li>
+                            <?php
+                        }
 
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-tags"></i>
-                                <span>Tags</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="tag_destination_type.php"><i class="fa fa-tag"></i> Destination Type Tag</a></li>
-                                <li><a href="tag_destination_activity.php"><i class="fa fa-tag"></i> Destination Activity Tag</a></li>
-                                <li><a href="tag_restaurant_type.php"><i class="fa fa-tag"></i> Restaurant Type Tag</a></li>
-                                <li><a href="tag_accommodation_type.php"><i class="fa fa-tag"></i> Accommodation Type Tag</a></li>
-                                <li><a href="tag_accommodation_room.php"><i class="fa fa-tag"></i> Accommodation Room Tag</a></li>
-                            </ul>
-                        </li>
+                        if ($_SESSION['backend_user_group'] == 'seo-team' || $_SESSION['backend_user_group'] == 'content-team' || $_SESSION['backend_user_group'] == 'admin')
+                        {
+                            ?>
+                            <li class="treeview">
+                                <a href="events.php">
+                                    <i class="fa fa-calendar"></i>
+                                    <span>Events</span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
 
-                        <li class="treeview">
-                            <a href="events.php">
-                                <i class="fa fa-calendar"></i>
-                                <span>Events</span>
-                            </a>
-                        </li>
-
-
-
-                        <li class="header">SEO</li>
+                        <!-- <li class="header">SEO</li>
                         <li class="treeview">
                             <a href="keyword.php">
                                 <i class="fa fa-code"></i> 
                                 <span>Keyword</span>
                             </a>
-                        </li>
-                        
-                        
-                        <li class="header">Admin</li>
-                        <li class="treeview">
-                            <a href="user.php">
-                                <i class="fa fa-user"></i> 
-                                <span>Backend User</span>
-                            </a>
-                        </li>
+                        </li> -->
 
+                        <?php
+                        if ($_SESSION['backend_user_group'] == 'admin')
+                        {
+                            ?>
+                            <li class="header">Admin</li>
+                            <li class="treeview">
+                                <a href="user.php">
+                                    <i class="fa fa-user"></i> 
+                                    <span>Backend User</span>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
-
-
 
             </aside>
 

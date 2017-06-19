@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<!--
-Project    : One Andaman
-Created on : 31/03/2017
-Author     : Nattapong  Kothong
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<?php
+session_start();
+
+/*unset($_SESSION["backend_user_id"]);
+unset($_SESSION["backend_user_name"]);
+unset($_SESSION["backend_user_group"]);
+unset($_SESSION["backend_user_time"]);*/ 
+
+
+session_destroy();
+?>
+<meta http-equiv='refresh' content='0;URL=login.php'>
